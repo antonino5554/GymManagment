@@ -1,0 +1,7 @@
+{
+  "name": "gymanagement",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
