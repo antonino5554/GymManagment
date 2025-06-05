@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -8,17 +10,40 @@ import { Router } from '@angular/router';
   standalone: false
 })
 export class LoginPage {
-  email: string = '';
+  username: string = '';
   password: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
   login() {
-    if (this.email === 'test@example.com' && this.password === '123456') {
-      // Naviga a home (assicurati che la pagina esista)
-      this.router.navigate(['/home']);
-    } else {
-      alert('Credenziali non valide');
+    const dati = {
+      username: this.username,
+      password: this.password
     }
+
+    this.http.post<any>('http://localhost:5000/api/login', dati, { withCredentials: true })
+    .subscribe({
+      next: (risposta) => {
+
+        if (risposta == null || risposta.data == null) {
+          alert("Login fallito");
+          return;
+        }
+        console.log(risposta.data)
+        const user: User = risposta.data;
+
+       
+        delete user.password;
+
+        sessionStorage.setItem('user', JSON.stringify(user));
+
+        // Naviga alla home
+        this.router.navigate(['/home']);
+      },
+      error: (err) => {
+        console.error('Errore nel login', err);
+        alert('Login fallito!');
+      }
+    });
   }
 }
