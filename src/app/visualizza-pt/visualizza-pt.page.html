@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Visualizza Personal Trainer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let pt of personalTrainers">
+      <ion-label>
+        <h2>{{ pt.full_name }}</h2>
+        <div *ngIf="pt.specialization">Specializzazione: {{ pt.specialization }}</div>
+        <div *ngIf="pt.email">Email: {{ pt.email }}</div>
+      </ion-label>
+      <ion-button fill="clear" slot="end" color="medium" (click)="goToDetails(pt); $event.stopPropagation()">
+        Details
+      </ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
