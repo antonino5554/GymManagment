@@ -13,6 +13,10 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
+  {
+    path: 'clienti-homepage',
+    loadChildren: () => import('./clienti-homepage/clienti-homepage.module').then( m => m.ClientiHomepagePageModule)
+  },
 
 
 ];

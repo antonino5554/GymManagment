@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Homepage Clienti</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="clienti-home-content">
+  <div class="benvenuto">
+    <h2>Ciao{{ nomeUtente ? ', ' + nomeUtente : '' }}!</h2>
+    <p>Benvenuto nella tua area personale.</p>
+  </div>
+
+  <div class="top-buttons">
+    <ion-button
+      class="big-square"
+      expand="block"
+      routerLink="/visualizza-pt"
+      color="primary"
+    >
+      Visualizza<br>Personal Trainer
+    </ion-button>
+
+    <ion-button
+      class="big-square"
+      expand="block"
+      routerLink="/valuta-pt"
+      color="secondary"
+    >
+      Valuta<br>Personal Trainer
+    </ion-button>
+  </div>
+
+  <ion-button
+    class="big-rectangle"
+    expand="block"
+    routerLink="/prenota-allenamento"
+    color="tertiary"
+  >
+    Prenota Allenamento
+  </ion-button>
+</ion-content>

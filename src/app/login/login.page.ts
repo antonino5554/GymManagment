@@ -37,8 +37,21 @@ export class LoginPage {
 
         sessionStorage.setItem('user', JSON.stringify(user));
 
-        // Naviga alla home
-        this.router.navigate(['/home']);
+        // Redirect in base al ruolo
+        switch (user.role) {
+          case 'admin':
+            this.router.navigate(['/admin-home']);
+            break;
+          case 'trainer':
+            this.router.navigate(['/trainer-home']);
+            break;
+          case 'customer':
+            this.router.navigate(['/clienti-homepage']);
+            break;
+          default:
+            this.router.navigate(['/home']);
+            break;
+        }
       },
       error: (err) => {
         console.error('Errore nel login', err);
