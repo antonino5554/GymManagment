@@ -19,11 +19,10 @@
       <h2 class="title">I tuoi Personal Trainer</h2>
 
       <ion-list class="pt-list">
-        <ion-item *ngFor="let pt of personalTrainers" class="pt-item">
+        <ion-item *ngFor="let pt of personalTrainers" class="pt-item" lines="none">
           <ion-label>
             <h3>{{ pt.full_name }}</h3>
             <p *ngIf="pt.specialization">💪 {{ pt.specialization }}</p>
-            <p *ngIf="pt.email">📧 {{ pt.email }}</p>
           </ion-label>
           <ion-button fill="clear" class="details-btn" (click)="goToDetails(pt); $event.stopPropagation()">
             Prenota

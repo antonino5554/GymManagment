@@ -1,0 +1,61 @@
+@import '../../theme/variables';
+
+html, body, ion-app {
+  height: 100%;
+}
+
+ion-content.pt-home-content {
+  @extend .page-container;
+}
+
+.lava-lamp-bg {
+  @extend .lava-lamp-bg;
+  .blob { @extend .blob; }
+  .blob-1 { @extend .blob-1; }
+  .blob-2 { @extend .blob-2; }
+  .blob-3 { @extend .blob-3; }
+}
+
+.pt-home-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.pt-home-card {
+  @extend .card-glass;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.pt-home-title h2 {
+  color: var(--color-dark);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.25rem;
+}
+
+.pt-home-title p {
+  color: var(--color-gray);
+  margin-bottom: 2rem;
+}
+
+.pt-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.home-button {
+  @extend .btn-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ion-icon {
+    margin-right: 8px;
+  }
+}

@@ -1,86 +1,23 @@
-/* Forza altezza a 100% anche su mobile */
-html,
-body,
-ion-app {
+@import '../../theme/variables';
+
+html, body, ion-app {
   height: 100%;
 }
 
 ion-content.login-content {
-  --background: #fdfcff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-  flex-direction: column;
+  @extend .page-container;
 }
 
 .lava-lamp-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 0;
+  @extend .lava-lamp-bg;
 
   .blob {
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    background: linear-gradient(135deg, #7c3aed, #3b82f6);
-    opacity: 0.85;
-    border-radius: 40% 60% 55% 45% / 60% 40% 60% 40%;
-    animation: blobMove 10s infinite ease-in-out;
-    filter: blur(15px); 
-    mix-blend-mode: screen;
-    transition: all 0.3s ease-in-out;
+    @extend .blob;
   }
 
-  .blob-1 {
-    top: -50px;
-    left: -80px;
-    animation-delay: 0s;
-  }
-
-  .blob-2 {
-    bottom: -50px;
-    right: -80px;
-    animation-delay: 3s;
-  }
-
-  .blob-3 {
-    top: 35%;
-    left: 50%;
-    animation-delay: 6s;
-  }
-}
-
-@keyframes blobMove {
-  0%, 100% {
-    transform: translate(0, 0) scale(1) rotate(0deg);
-    border-radius: 40% 60% 55% 45% / 60% 40% 60% 40%;
-  }
-  33% {
-    transform: translate(40px, -30px) scale(1.1) rotate(25deg);
-    border-radius: 60% 40% 50% 50% / 50% 50% 60% 40%;
-  }
-  66% {
-    transform: translate(-30px, 40px) scale(0.95) rotate(-20deg);
-    border-radius: 50% 50% 60% 40% / 45% 55% 60% 40%;
-  }
-}
-
-
-@keyframes bgMove {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  100% {
-    transform: rotate(10deg) scale(1.05);
-  }
+  .blob-1 { @extend .blob-1; }
+  .blob-2 { @extend .blob-2; }
+  .blob-3 { @extend .blob-3; }
 }
 
 .login-wrapper {
@@ -92,7 +29,6 @@ ion-content.login-content {
   margin: 0 auto;
 }
 
-
 .login-container {
   width: 100%;
   max-width: 420px;
@@ -101,71 +37,28 @@ ion-content.login-content {
 }
 
 .login-bubble {
-  background: #ffffffee;
-  backdrop-filter: blur(10px);
-  border-radius: 2rem;
-  padding: 2.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  @extend .card-glass;
 }
 
 .login-bubble h2 {
-  color: #1f2937;
+  color: var(--color-dark);
   margin-bottom: 0.5rem;
   font-size: 1.6rem;
   font-weight: 800;
 }
 
 .login-bubble p {
-  color: #6b7280;
+  color: var(--color-gray);
   margin-bottom: 2rem;
   font-size: 0.95rem;
 }
 
 .input-group {
-  position: relative;
-  background: #f3f4f6;
-  border-radius: 16px;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.input-group ion-icon {
-  font-size: 1.2rem;
-  color: #7c3aed;
-}
-
-.input-group ion-input {
-  flex: 1;
-  --highlight-color-focused: #7c3aed;
-  color: #1f2937;
+  @extend .input-group;
 }
 
 .login-button {
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 999px;
-  padding: 14px 0;
-  width: 100%;
-  background: linear-gradient(to right, #7c3aed, #3b82f6);
-  color: white;
-  border: none;
-  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.3);
-  transition: transform 0.2s ease;
-
-  --background: none;
-  --box-shadow: none;
-  --border-color: transparent;
-  --border-width: 0;
-  --border-style: none;
-}
-
-.login-button:hover {
-  transform: scale(1.03);
+  @extend .btn-primary;
 }
 
 .login-button:active {
@@ -176,16 +69,16 @@ ion-content.login-content {
 .login-footer {
   margin-top: 1.5rem;
   font-size: 0.9rem;
-  color: #6b7280;
+  color: var(--color-gray);
 }
 
 .login-footer a {
-  color: #7c3aed;
+  color: var(--color-primary);
   font-weight: 600;
   margin-left: 6px;
   transition: color 0.25s ease;
 }
 
 .login-footer a:hover {
-  color: #3b82f6;
+  color: var(--color-secondary);
 }

@@ -1,0 +1,37 @@
+<ion-content class="crea-allenamento-content">
+  <div class="lava-lamp-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="crea-allenamento-wrapper">
+    <div class="crea-allenamento-card">
+      <h2>Crea Allenamento</h2>
+
+      <div class="input-group">
+        <label>Data Inizio</label>
+        <ion-datetime
+          placeholder="Seleziona data e ora di inizio"
+          display-format="DD/MM/YYYY HH:mm"
+          presentation="date-time"
+          [(ngModel)]="dataInizio">
+        </ion-datetime>
+      </div>
+
+      <div class="input-group">
+        <label>Data Fine</label>
+        <ion-datetime
+          placeholder="Seleziona data e ora di fine"
+          display-format="DD/MM/YYYY HH:mm"
+          presentation="date-time"
+          [(ngModel)]="dataFine">
+        </ion-datetime>
+      </div>
+
+      <ion-button expand="block" class="crea-button" (click)="creaAllenamento()">
+        Crea Allenamento
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
