@@ -1,20 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Visualizza Personal Trainer</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/clienti-homepage"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Visualizza PT</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let pt of personalTrainers">
-      <ion-label>
-        <h2>{{ pt.full_name }}</h2>
-        <div *ngIf="pt.specialization">Specializzazione: {{ pt.specialization }}</div>
-        <div *ngIf="pt.email">Email: {{ pt.email }}</div>
-      </ion-label>
-      <ion-button fill="clear" slot="end" color="medium" (click)="goToDetails(pt); $event.stopPropagation()">
-        Details
-      </ion-button>
-    </ion-item>
-  </ion-list>
+<ion-content class="visualizza-content" fullscreen="true">
+  <div class="lava-lamp-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="pt-wrapper">
+    <div class="pt-card">
+      <h2 class="title">I tuoi Personal Trainer</h2>
+
+      <ion-list class="pt-list">
+        <ion-item *ngFor="let pt of personalTrainers" class="pt-item">
+          <ion-label>
+            <h3>{{ pt.full_name }}</h3>
+            <p *ngIf="pt.specialization">💪 {{ pt.specialization }}</p>
+            <p *ngIf="pt.email">📧 {{ pt.email }}</p>
+          </ion-label>
+          <ion-button fill="clear" class="details-btn" (click)="goToDetails(pt); $event.stopPropagation()">
+            Prenota
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
 </ion-content>

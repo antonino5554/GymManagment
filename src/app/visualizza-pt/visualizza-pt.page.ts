@@ -17,7 +17,7 @@ export class VisualizzaPtPage implements OnInit {
   this.http.get<any>('http://localhost:5000/api/customer/trainers', { withCredentials: true })
     .subscribe({
       next: (data) => {
-        this.personalTrainers = data.data; // <-- ATTENZIONE QUI!
+        this.personalTrainers = data.data;
       },
       error: (err) => {
         console.error('Errore nel caricamento dei PT', err);
