@@ -1,41 +1,54 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Homepage Clienti</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="danger" routerLink="/login">
+
+        Esci
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="clienti-home-content">
-  <div class="benvenuto">
-    <h2>Ciao{{ nomeUtente ? ', ' + nomeUtente : '' }}!</h2>
-    <p>Benvenuto nella tua area personale.</p>
+<ion-content class="clienti-home-content" fullscreen="true">
+  <div class="lava-lamp-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
   </div>
 
-  <div class="top-buttons">
-    <ion-button
-      class="big-square"
-      expand="block"
-      routerLink="/visualizza-pt"
-      color="primary"
-    >
-      Visualizza<br>Personal Trainer
-    </ion-button>
+  <div class="clienti-wrapper">
+    <div class="clienti-card">
+      <div class="benvenuto">
+        <h2>Ciao{{ nomeUtente ? ', ' + nomeUtente : '' }}!</h2>
+        <p>Benvenuto nella tua area personale.</p>
+      </div>
 
-    <ion-button
-      class="big-square"
-      expand="block"
-      routerLink="/valuta-pt"
-      color="secondary"
-    >
-      Valuta<br>Personal Trainer
-    </ion-button>
+      <div class="top-buttons">
+        <ion-button
+          expand="block"
+          routerLink="/visualizza-pt"
+          class="home-button gradient violet"
+        >
+          Visualizza<br />Personal Trainer
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          routerLink="/valuta-pt"
+          class="home-button gradient blue"
+        >
+          Valuta<br />Personal Trainer
+        </ion-button>
+      </div>
+
+      <ion-button
+        expand="block"
+        routerLink="/prenota-allenamento"
+        class="home-button gradient dark"
+      >
+        Prenota Allenamento
+      </ion-button>
+    </div>
   </div>
-
-  <ion-button
-    class="big-rectangle"
-    expand="block"
-    routerLink="/prenota-allenamento"
-    color="tertiary"
-  >
-    Prenota Allenamento
-  </ion-button>
 </ion-content>

@@ -21,9 +21,10 @@ export class LoginPage {
       password: this.password
     }
 
-    this.http.post<any>('http://localhost:5000/api/login', dati, { withCredentials: true })
+    this.http.post<any>('http://localhost:5000/api/login', dati,)
     .subscribe({
       next: (risposta) => {
+        console.log(risposta);
 
         if (risposta == null || risposta.data == null) {
           alert("Login fallito");
@@ -43,7 +44,7 @@ export class LoginPage {
             this.router.navigate(['/admin-home']);
             break;
           case 'trainer':
-            this.router.navigate(['/trainer-home']);
+            this.router.navigate(['/pt-homepage']);
             break;
           case 'customer':
             this.router.navigate(['/clienti-homepage']);

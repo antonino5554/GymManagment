@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home Trainer</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login" color="danger">
+        Esci
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="pt-home-content">
+  <div class="lava-lamp-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="pt-home-wrapper">
+    <div class="pt-home-card">
+      <div class="pt-home-title">
+        <h2>Ciao{{ Username ? ', ' + Username : '' }}!</h2>
+        <p>Accedi alle funzionalità da Personal Trainer</p>
+      </div>
+
+      <div class="pt-actions">
+        <ion-button class="home-button gradient violet" expand="block" routerLink="/crea-allenamento">
+          <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+          Crea Allenamento
+        </ion-button>
+
+        <ion-button class="home-button gradient blue" expand="block" routerLink="/visualizza-allenamenti">
+          <ion-icon name="eye-outline" slot="start"></ion-icon>
+          Visualizza Allenamenti
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

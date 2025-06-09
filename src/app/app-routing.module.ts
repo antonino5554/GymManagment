@@ -9,14 +9,35 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
   {
     path: 'clienti-homepage',
     loadChildren: () => import('./clienti-homepage/clienti-homepage.module').then( m => m.ClientiHomepagePageModule)
+  },  {
+    path: 'visualizza-pt',
+    loadChildren: () => import('./visualizza-pt/visualizza-pt.module').then( m => m.VisualizzaPtPageModule)
   },
+  {
+    path: 'valuta-pt',
+    loadChildren: () => import('./valuta-pt/valuta-pt.module').then( m => m.ValutaPtPageModule)
+  },
+  {
+    path: 'pt-homepage',
+    loadChildren: () => import('./pt-homepage/pt-homepage.module').then( m => m.PtHomepagePageModule)
+  },
+  {
+    path: 'crea-allenamento',
+    loadChildren: () => import('./crea-allenamento/crea-allenamento.module').then( m => m.CreaAllenamentoPageModule)
+  },
+  {
+    path: 'prenota-allenamento',
+    loadChildren: () => import('./prenota-allenamento/prenota-allenamento.module').then( m => m.PrenotaAllenamentoPageModule)
+  },
+
 
 
 ];

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/clienti-homepage"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Valuta Trainer</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="valuta-content">
+  <div class="lava-lamp-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="valuta-wrapper">
+    <div class="valuta-card">
+      <h2>Lascia una valutazione</h2>
+      <p>Valuta il tuo personal trainer</p>
+
+      <ion-item class="input-group" lines="none">
+        <ion-icon name="people-outline" slot="start"></ion-icon>
+        <ion-select [(ngModel)]="selectedTrainerId" interface="popover" placeholder="Seleziona Trainer">
+          <ion-select-option *ngFor="let t of trainers" [value]="t.id">{{ t.full_name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div class="rating-stars">
+        <ion-icon
+          *ngFor="let s of stars; let i = index"
+          [name]="i < rating ? 'star' : 'star-outline'"
+          (click)="setRating(i + 1)">
+        </ion-icon>
+      </div>
+
+      <ion-item class="input-group" lines="none">
+        <ion-icon name="chatbox-ellipses-outline" slot="start"></ion-icon>
+        <ion-textarea placeholder="Scrivi una recensione (opzionale)" [(ngModel)]="review"></ion-textarea>
+      </ion-item>
+
+      <ion-button expand="block" class="submit-button" (click)="submitRating()">
+        Invia Valutazione
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

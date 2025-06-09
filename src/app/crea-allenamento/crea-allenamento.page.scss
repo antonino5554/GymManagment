@@ -1,0 +1,61 @@
+@import '../../theme/variables';
+
+ion-content.crea-allenamento-content {
+  @extend .page-container;
+}
+
+.lava-lamp-bg {
+  @extend .lava-lamp-bg;
+  .blob {
+    @extend .blob;
+  }
+  .blob-1 { @extend .blob-1; }
+  .blob-2 { @extend .blob-2; }
+  .blob-3 { @extend .blob-3; }
+}
+
+.crea-allenamento-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.crea-allenamento-card {
+  @extend .card-glass;
+  text-align: center;
+
+  h2 {
+    color: var(--color-dark);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+  }
+
+  .input-group {
+    background: var(--color-light);
+    border-radius: 16px;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+    label {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-dark);
+      margin-bottom: 0.3rem;
+      display: block;
+      text-align: left;
+    }
+
+    ion-datetime {
+      width: 100%;
+      background: transparent;
+      color: var(--color-dark);
+    }
+  }
+
+  .crea-button {
+    @extend .btn-primary;
+  }
+}
