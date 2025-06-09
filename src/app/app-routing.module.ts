@@ -17,7 +17,8 @@ const routes: Routes = [
   {
     path: 'clienti-homepage',
     loadChildren: () => import('./clienti-homepage/clienti-homepage.module').then( m => m.ClientiHomepagePageModule)
-  },  {
+  },
+  {
     path: 'visualizza-pt',
     loadChildren: () => import('./visualizza-pt/visualizza-pt.module').then( m => m.VisualizzaPtPageModule)
   },
@@ -37,7 +38,10 @@ const routes: Routes = [
     path: 'prenota-allenamento',
     loadChildren: () => import('./prenota-allenamento/prenota-allenamento.module').then( m => m.PrenotaAllenamentoPageModule)
   },
-
+  {
+    path: 'admin-homepage',
+    loadChildren: () => import('./admin-homepage/admin-homepage.module').then( m => m.AdminHomepagePageModule)
+  },
 
 
 ];

@@ -8,15 +8,37 @@
 </ion-header>
 
 <ion-content class="prenota-content">
-  <div class="card-wrapper">
-    <div *ngIf="slots.length === 0" class="no-slots">
-      Nessun allenamento disponibile.
-    </div>
+  <div class="lava-lamp-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
 
-    <div *ngFor="let slot of slots" class="slot-item">
-      <h3>{{ slot.start_time | date:'short' }} - {{ slot.end_time | date:'short' }}</h3>
-      <p>Posti disponibili: {{ slot.available_spots }}</p>
-      <ion-button expand="block" color="primary" (click)="prenota(slot.id)">Prenota</ion-button>
+  <div class="prenota-wrapper">
+    <div class="prenota-card">
+      
+      <ion-item  class = "bar" lines="none">
+        <ion-label>Seleziona Trainer</ion-label>
+        <ion-select [(ngModel)]="trainerId" (ionChange)="caricaAllenamenti()">
+          <ion-select-option *ngFor="let t of trainers" [value]="t.id">
+            {{ t.full_name }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <div *ngIf="slots.length === 0" class="empty">
+        Nessun allenamento disponibile per questo trainer.
+      </div>
+
+      <div *ngFor="let slot of slots" class="slot-item">
+        <ion-label>
+          <h3>{{ slot.start_time | date:'medium' }}</h3>
+          <p>Fine: {{ slot.end_time | date:'shortTime' }}</p>
+        </ion-label>
+        <ion-button size="small" shape="round" fill="solid" color="primary" (click)="prenota(slot.id)">
+          Prenota
+        </ion-button>
+      </div>
     </div>
   </div>
 </ion-content>
