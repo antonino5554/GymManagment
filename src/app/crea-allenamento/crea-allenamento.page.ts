@@ -33,9 +33,7 @@ export class CreaAllenamentoPage {
 
     console.log('Dati inviati:', body);
 
-    this.http.post('http://localhost:5000/api/trainer/schedule', body, {
-      withCredentials: true
-    }).subscribe({
+    this.http.post('http://localhost:5000/api/trainer/schedule', body).subscribe({
       next: () => this.mostraToast('Allenamento creato con successo!', 'success'),
       error: (err) => {
         console.error('Errore:', err);

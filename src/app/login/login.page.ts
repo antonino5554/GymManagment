@@ -21,7 +21,7 @@ export class LoginPage {
       password: this.password
     }
 
-    this.http.post<any>('http://localhost:5000/api/login', dati, { withCredentials: true })
+    this.http.post<any>('http://localhost:5000/api/login', dati,)
     .subscribe({
       next: (risposta) => {
         console.log(risposta);

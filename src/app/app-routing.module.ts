@@ -33,6 +33,10 @@ const routes: Routes = [
     path: 'crea-allenamento',
     loadChildren: () => import('./crea-allenamento/crea-allenamento.module').then( m => m.CreaAllenamentoPageModule)
   },
+  {
+    path: 'prenota-allenamento',
+    loadChildren: () => import('./prenota-allenamento/prenota-allenamento.module').then( m => m.PrenotaAllenamentoPageModule)
+  },
 
 
 
