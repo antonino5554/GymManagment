@@ -1,0 +1,17 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40vh; // roughly centers vertically
+  flex-wrap: wrap;
+}
+
+.rounded-button {
+  --border-radius: 20px;
+  height: 100px;
+  width: 150px;
+  font-size: 16px;
+  text-align: center;
+  white-space: normal;
+}
