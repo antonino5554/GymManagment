@@ -13,7 +13,6 @@ export class ClientiHomePage implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    // Esempio: recupero user da sessionStorage (adatta se usi un altro storage)
     const userString = sessionStorage.getItem('user');
     if (userString) {
       const user = JSON.parse(userString);

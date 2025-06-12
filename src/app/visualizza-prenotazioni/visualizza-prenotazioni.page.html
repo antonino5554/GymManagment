@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/clienti-homepage"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Le Tue Prenotazioni</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="visualizza-prenotazioni-content" fullscreen="true">
+  <div class="lava-lamp-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="visualizza-prenotazioni-wrapper">
+    <div class="visualizza-prenotazioni-card">
+      <h2>Le Tue Prenotazioni</h2>
+
+      <div *ngIf="prenotazioni.length === 0" class="empty">Nessuna prenotazione trovata</div>
+
+      <div *ngFor="let booking of prenotazioni" class="booking-item" [class.past]="booking.past">
+        <div class="info">
+          <strong>{{ booking.trainer_name }}</strong>
+          <p>{{ booking.start_time | date:'fullDate' }} - {{ booking.start_time | date:'shortTime' }}</p>
+        </div>
+        <div class="badge">{{ booking.past ? 'Passata' : 'Futura' }}</div>
+      </div>
+    </div>
+  </div>
+</ion-content>

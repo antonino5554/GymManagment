@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { AlertController } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-prenota-allenamento',
@@ -10,45 +10,88 @@ import { AlertController } from '@ionic/angular';
 })
 export class PrenotaAllenamentoPage implements OnInit {
   trainers: any[] = [];
-  slots: any[] = [];
-  trainerId: number | null = null;
+  selectedTrainerId: number | null = null;
+  filteredSlots: any[] = [];
+  slotPrenotati: number[] = [];
 
-  constructor(private http: HttpClient, private alertCtrl: AlertController) {}
+  constructor(private http: HttpClient, private toastController: ToastController) {}
 
   ngOnInit() {
-    this.caricaTrainers();
-  }
+  this.caricaPrenotazioniEsistenti().then(() => {
+    this.caricaTrainer();
+  });
+}
 
-  caricaTrainers() {
+
+  caricaTrainer() {
     this.http.get<any>('http://localhost:5000/api/customer/trainers').subscribe({
       next: res => {
         this.trainers = res.data;
+        if (this.trainers.length > 0) {
+          this.selectedTrainerId = this.trainers[0].id;
+          this.caricaSlotDisponibili();
+        }
       },
-      error: () => this.mostraAlert('Errore', 'Impossibile caricare i trainer.')
+      error: () => {
+        this.mostraToast('Impossibile caricare i trainer', 'danger');
+      }
     });
   }
 
-  caricaAllenamenti() {
-    if (!this.trainerId) return;
-    this.http.get<any>(`http://localhost:5000/api/customer/slots?trainer_id=${this.trainerId}`)
-      .subscribe({
-        next: res => this.slots = res.data,
-        error: () => this.mostraAlert('Errore', 'Impossibile caricare gli allenamenti.')
-      });
+  caricaSlotDisponibili() {
+    if (!this.selectedTrainerId) return;
+
+    this.http.get<any>(`http://localhost:5000/api/customer/slots?trainer_id=${this.selectedTrainerId}`).subscribe({
+      next: res => {
+        this.filteredSlots = res.data.map((slot: any) => ({
+          ...slot,
+          giaPrenotato: this.slotPrenotati.includes(slot.id)
+        }));
+      },
+      error: () => {
+        this.mostraToast('Impossibile caricare gli slot disponibili', 'danger');
+      }
+    });
   }
+
+  async caricaPrenotazioniEsistenti() {
+  return new Promise<void>((resolve) => {
+    this.http.get<any>('http://localhost:5000/api/customer/dashboard').subscribe({
+      next: res => {
+        const prenotazioni = res.data.upcoming_bookings || [];
+        this.slotPrenotati = prenotazioni.map((p: any) => p.slot_id);
+        resolve();
+      },
+      error: () => {
+        this.mostraToast('Impossibile recuperare le prenotazioni esistenti', 'danger');
+        resolve(); // comunque risolvi per non bloccare
+      }
+    });
+  });
+}
+
 
   prenota(slotId: number) {
     this.http.post('http://localhost:5000/api/customer/book', { slot_id: slotId }).subscribe({
       next: () => {
-        this.mostraAlert('Successo', 'Allenamento prenotato!');
-        this.caricaAllenamenti();
+        this.slotPrenotati.push(slotId);
+        this.filteredSlots = this.filteredSlots.map(slot =>
+          slot.id === slotId ? { ...slot, giaPrenotato: true } : slot
+        );
+        this.mostraToast('Allenamento prenotato!', 'success');
       },
-      error: err => this.mostraAlert('Errore', err.error?.message || 'Errore nella prenotazione')
+      error: err => {
+        this.mostraToast(err.error?.message || 'Errore nella prenotazione', 'danger');
+      }
     });
   }
 
-  async mostraAlert(header: string, message: string) {
-    const alert = await this.alertCtrl.create({ header, message, buttons: ['OK'] });
-    await alert.present();
+  async mostraToast(message: string, color: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000,
+      color
+    });
+    await toast.present();
   }
 }

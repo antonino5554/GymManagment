@@ -24,9 +24,4 @@ export class VisualizzaPtPage implements OnInit {
       }
     });
 }
-
-
-  goToDetails(pt: any) {
-    this.router.navigate(['/pt-details', pt.id]);
-  }
 }
