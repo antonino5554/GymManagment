@@ -22,14 +22,23 @@ export class CreaAllenamentoPage {
       this.mostraToast('Compila tutti i campi!', 'danger');
       return;
     }
+    function formatLocale(dateStr: string): string {
+      const d = new Date(dateStr);
+      const yyyy = d.getFullYear();
+      const mm = ('0' + (d.getMonth() + 1)).slice(-2);
+      const dd = ('0' + d.getDate()).slice(-2);
+      const hh = ('0' + d.getHours()).slice(-2);
+      const mi = ('0' + d.getMinutes()).slice(-2);
+      return `${yyyy}-${mm}-${dd} ${hh}:${mi}`;
+  }
 
-    const start = new Date(this.dataInizio).toISOString().slice(0, 19);
-    const end = new Date(this.dataFine).toISOString().slice(0, 19);
+    const start = formatLocale(this.dataInizio);
+    const end = formatLocale(this.dataFine);
 
     const body = {
       start_time: start,
       end_time: end
-    };
+  };
 
     console.log('Dati inviati:', body);
 
