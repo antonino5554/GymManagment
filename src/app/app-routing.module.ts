@@ -49,6 +49,10 @@ const routes: Routes = [
     path: 'visualizza-allenamenti',
     loadChildren: () => import('./visualizza-allenamenti/visualizza-allenamenti.module').then( m => m.VisualizzaAllenamentiPageModule)
   },
+  {
+    path: 'visualizza-pt-admin',
+    loadChildren: () => import('./visualizza-pt-admin/visualizza-pt-admin.module').then( m => m.VisualizzaPtAdminPageModule)
+  },
 
 
 
