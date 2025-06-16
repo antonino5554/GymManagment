@@ -41,7 +41,8 @@ const routes: Routes = [
   {
     path: 'admin-homepage',
     loadChildren: () => import('./admin-homepage/admin-homepage.module').then( m => m.AdminHomepagePageModule)
-  },  {
+  },
+  {
     path: 'visualizza-prenotazioni',
     loadChildren: () => import('./visualizza-prenotazioni/visualizza-prenotazioni.module').then( m => m.VisualizzaPrenotazioniPageModule)
   },
@@ -50,8 +51,8 @@ const routes: Routes = [
     loadChildren: () => import('./visualizza-allenamenti/visualizza-allenamenti.module').then( m => m.VisualizzaAllenamentiPageModule)
   },
   {
-    path: 'visualizza-clienti-ad',
-    loadChildren: () => import('./visualizza-clienti-ad/visualizza-clienti-ad.module').then( m => m.VisualizzaClientiAdPageModule)
+    path: 'visualizza-pt-admin',
+    loadChildren: () => import('./visualizza-pt-admin/visualizza-pt-admin.module').then( m => m.VisualizzaPtAdminPageModule)
   },
 
 
