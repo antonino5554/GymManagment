@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin-homepage"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Visualizza Clienti</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="visualizza-content" fullscreen="true">
+  <div class="lava-lamp-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="pt-wrapper">
+    <div class="pt-card">
+      <h2 class="title">Tutti i Clienti</h2>
+
+      <ion-list class="pt-list">
+        <ion-item *ngFor="let customer of customers" class="pt-item" lines="none">
+          <ion-label>
+            <h3>{{ customer.full_name }}</h3>
+            <p>Email: {{ customer.email }}</p>
+            <p>Telefono: {{ customer.phone }}</p>
+            <p *ngIf="customer.join_date">Iscritto il: {{ customer.join_date | date:'dd/MM/yyyy' }}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>
