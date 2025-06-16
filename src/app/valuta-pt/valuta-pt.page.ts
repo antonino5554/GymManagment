@@ -48,7 +48,6 @@ export class ValutaPtPage implements OnInit {
       next: () => {
         this.mostraToast('Valutazione inviata con successo!', 'success');
         this.rating = 0;
-        this.review = '';
         this.selectedTrainerId = null;
       },
       error: err => {
