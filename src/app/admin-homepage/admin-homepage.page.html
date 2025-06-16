@@ -1,38 +1,54 @@
-<ion-content class="ion-padding">
-  <div class="button-container">
-    <ion-button
-      class="rounded-button"
-      expand="block"
-      (click)="goToTrainers()"
-    >
-      Visualizza Personal Trainer
-    </ion-button>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Homepage Admin</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="danger" routerLink="/login">
+        Esci
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-    <ion-button
-      class="rounded-button"
-      expand="block"
-      (click)="goToClients()"
-    >
-      Visualizza Clienti
-    </ion-button>
+<ion-content class="admin-home-content" fullscreen="true">
+  <div class="lava-lamp-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="admin-wrapper">
+    <div class="admin-card">
+      <div class="benvenuto">
+        <h2>Ciao{{ nomeUtente ? ', ' + nomeUtente : '' }}!</h2>
+        <p>Benvenuto nel pannello di amministrazione.</p>
+      </div>
+
+      <div class="top-buttons">
+        <ion-button
+          expand="block"
+          routerLink="/visualizza-PT"
+          class="home-button gradient violet"
+        >
+          Visualizza<br />Personal Trainer
+        </ion-button>
+
+        <ion-button
+          expand="block"
+          routerLink="/visualizza-clienti"
+          class="home-button gradient blue"
+        >
+          Visualizza<br />Clienti
+        </ion-button>
+      </div>
+
+      <ion-button
+        expand="block"
+        routerLink="/impostazioni"
+        class="home-button gradient dark"
+      >
+        Impostazioni
+      </ion-button>
+    </div>
   </div>
 </ion-content>
-<ion-content class="ion-padding">
-  <div class="button-container">
-    <ion-button
-      class="rounded-button"
-      expand="block"
-      (click)="goToTrainers()"
-    >
-      Visualizza Personal Trainer
-    </ion-button>
 
-    <ion-button
-      class="rounded-button"
-      expand="block"
-      (click)="goToClients()"
-    >
-      Visualizza Clienti
-    </ion-button>
-  </div>
-</ion-content>

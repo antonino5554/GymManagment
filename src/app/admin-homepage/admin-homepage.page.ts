@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,16 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin-homepage.page.scss'],
   standalone: false
 })
-export class AdminHomepagePage {
-  constructor(private router: Router) {}
+export class AdminHomepagePage implements OnInit{
 
-  goToTrainers() {
-    this.router.navigate(['/personal-trainer']);
-  }
+  nomeUtente: string = " ";
 
-  goToClients() {
-    
-    this.router.navigate(['/clienti']);
+ ngOnInit() {
+    const userString = sessionStorage.getItem('user');
+    if (userString) {
+      const user = JSON.parse(userString);
+      this.nomeUtente = user.full_name || user.username || '';
+    }
   }
 }
 

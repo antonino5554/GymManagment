@@ -1,17 +1,73 @@
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin-top: 40vh; // roughly centers vertically
-  flex-wrap: wrap;
+@import '../../theme/variables';
+
+html, body, ion-app {
+  height: 100%;
 }
 
-.rounded-button {
-  --border-radius: 20px;
-  height: 100px;
-  width: 150px;
-  font-size: 16px;
-  text-align: center;
-  white-space: normal;
+ion-content.admin-home-content {
+  @extend .page-container;
+}
+
+.lava-lamp-bg {
+  @extend .lava-lamp-bg;
+
+  .blob {
+    @extend .blob;
+  }
+
+  .blob-1, .blob-2, .blob-3 {
+    @extend .blob-1;
+    @extend .blob-2;
+    @extend .blob-3;
+  }
+}
+
+.admin-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.admin-card {
+  @extend .card-glass;
+}
+
+.benvenuto h2 {
+  color: var(--color-dark);
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.benvenuto p {
+  color: var(--color-gray);
+  margin-bottom: 2rem;
+}
+
+.top-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-button {
+  @extend .btn-primary;
+  text-transform: none;
+}
+
+// Color variants override
+.gradient.violet {
+  background: linear-gradient(to right, #a855f7, #6366f1);
+}
+
+.gradient.blue {
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+}
+
+.gradient.dark {
+  background: linear-gradient(to right, #4b5563, #6b7280);
 }
