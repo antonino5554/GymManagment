@@ -1,3 +1,9 @@
+// Questa parte fa gli import dei moduli necessari
+//"component" viene utilizzato per definire il componente Angular
+//"Router" viene utilizzato per la navigazione tra le pagine
+//"HttpClient" per fare le richieste HTTP
+//"ToastController" per mostrare i messaggi in stile toast
+//"User" importa il modello dati dell'utente, che contiene le informazioni dell'utente come username, password e ruolo
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -5,10 +11,10 @@ import { ToastController } from '@ionic/angular';
 import { User } from '../models/user.model';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
-  standalone: false
+  selector: 'app-login',            //nome del selettore del componente, usato per inserire il componente nel template HTML
+  templateUrl: './login.page.html', //file HTML che definisce il layout della pagina di login
+  styleUrls: ['./login.page.scss'], //file CSS che definisce lo stile della pagina di login
+  standalone: false                 // indica che questo componente non è un componente standalone, ma fa parte di un modulo Angular
 })
 export class LoginPage {
   username: string = '';
@@ -42,7 +48,7 @@ export class LoginPage {
 
         switch (user.role) {
           case 'admin':
-            this.router.navigate(['/admin-home']);
+            this.router.navigate(['/admin-homepage']);
             break;
           case 'trainer':
             this.router.navigate(['/pt-homepage']);
