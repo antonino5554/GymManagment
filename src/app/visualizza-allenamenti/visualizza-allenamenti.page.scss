@@ -1,0 +1,83 @@
+@import '../../theme/variables';
+
+html, body, ion-app {
+  height: 100%;
+}
+
+ion-content.visualizza-allenamenti-content {
+  @extend .page-container;
+}
+
+.lava-lamp-bg {
+  @extend .lava-lamp-bg;
+
+  .blob { @extend .blob; }
+  .blob-1 { @extend .blob-1; }
+  .blob-2 { @extend .blob-2; }
+  .blob-3 { @extend .blob-3; }
+}
+
+.visualizza-allenamenti-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.visualizza-allenamenti-card {
+  @extend .card-glass;
+  padding: 2rem;
+  text-align: center;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-dark);
+    margin-bottom: 1.2rem;
+    margin-top: 1rem;
+  }
+
+  .no-data-msg {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--color-gray);
+  }
+}
+
+ion-list.allenamenti {
+  background: transparent;
+
+  .allenamenti-item {
+    --background: var(--blob-bg-color, #7b7bff);
+    --border-radius: 20px;
+    margin-bottom: 0.1rem;
+    padding: 0.5rem;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07);
+    --transition: transform 0.2s ease;
+    --display: flex;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    ion-label {
+      h3 {
+        font-size: 1.07rem;
+        font-weight: 700;
+        color: var(--color-light);
+        margin-bottom: 0.4rem;
+        text-align: center;
+        text-decoration-line: underline;
+      }
+
+      p {
+        font-size: 0.9rem;
+        margin: 0.15rem 0;
+        color: var(--color-light);
+      }
+    }
+  }
+}
