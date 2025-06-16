@@ -41,7 +41,15 @@ const routes: Routes = [
   {
     path: 'admin-homepage',
     loadChildren: () => import('./admin-homepage/admin-homepage.module').then( m => m.AdminHomepagePageModule)
+  },  {
+    path: 'visualizza-prenotazioni',
+    loadChildren: () => import('./visualizza-prenotazioni/visualizza-prenotazioni.module').then( m => m.VisualizzaPrenotazioniPageModule)
   },
+  {
+    path: 'visualizza-allenamenti',
+    loadChildren: () => import('./visualizza-allenamenti/visualizza-allenamenti.module').then( m => m.VisualizzaAllenamentiPageModule)
+  },
+
 
 
 ];

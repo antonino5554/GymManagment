@@ -33,12 +33,7 @@
           (click)="setRating(i + 1)">
         </ion-icon>
       </div>
-
-      <ion-item class="input-group" lines="none">
-        <ion-icon name="chatbox-ellipses-outline" slot="start"></ion-icon>
-        <ion-textarea placeholder="Scrivi una recensione (opzionale)" [(ngModel)]="review"></ion-textarea>
-      </ion-item>
-
+      
       <ion-button expand="block" class="submit-button" (click)="submitRating()">
         Invia Valutazione
       </ion-button>

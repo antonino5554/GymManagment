@@ -23,10 +23,5 @@ export class VisualizzaPtPage implements OnInit {
         console.error('Errore nel caricamento dei PT', err);
       }
     });
-}
-
-
-  goToDetails(pt: any) {
-    this.router.navigate(['/pt-details', pt.id]);
   }
 }

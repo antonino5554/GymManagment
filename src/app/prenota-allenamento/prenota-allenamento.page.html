@@ -7,37 +7,39 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="prenota-content">
+<ion-content class="prenota-allenamento-content" fullscreen="true">
   <div class="lava-lamp-bg">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
   </div>
 
-  <div class="prenota-wrapper">
-    <div class="prenota-card">
-      
-      <ion-item  class = "bar" lines="none">
-        <ion-label>Seleziona Trainer</ion-label>
-        <ion-select [(ngModel)]="trainerId" (ionChange)="caricaAllenamenti()">
-          <ion-select-option *ngFor="let t of trainers" [value]="t.id">
-            {{ t.full_name }}
+  <div class="prenota-allenamento-wrapper">
+    <div class="prenota-allenamento-card">
+      <h2>Prenota Allenamento</h2>
+
+      <div class="input-group">
+        <h6>Seleziona Trainer</h6>
+        <ion-select [(ngModel)]="selectedTrainerId" (ionChange)="caricaSlotDisponibili()" interface="popover" placeholder="Trainer">
+          <ion-select-option *ngFor="let trainer of trainers" [value]="trainer.id">
+            {{ trainer.full_name }} - {{ trainer.specialization }}
           </ion-select-option>
         </ion-select>
-      </ion-item>
-
-      <div *ngIf="slots.length === 0" class="empty">
-        Nessun allenamento disponibile per questo trainer.
       </div>
 
-      <div *ngFor="let slot of slots" class="slot-item">
-        <ion-label>
-          <h3>{{ slot.start_time | date:'medium' }}</h3>
-          <p>Fine: {{ slot.end_time | date:'shortTime' }}</p>
-        </ion-label>
-        <ion-button size="small" shape="round" fill="solid" color="primary" (click)="prenota(slot.id)">
-          Prenota
-        </ion-button>
+      <div class="slot-container">
+        <h3>Allenamenti Disponibili</h3>
+        <div *ngIf="filteredSlots.length === 0" class="empty">Nessun allenamento disponibile.</div>
+
+        <div *ngFor="let slot of filteredSlots" class="slot-item" [class.disabled]="slot.giaPrenotato">
+          <div>
+            <strong>Inizio:<br/>{{ slot.start_time | date:'short' }}</strong><br>
+            Fine:<br/> {{ slot.end_time | date:'shortTime' }}
+          </div>
+          <ion-button fill="solid" size="small" class="gradient" [disabled]="slot.giaPrenotato" (click)="prenota(slot.id)">
+            {{ slot.giaPrenotato ? 'Prenotato' : 'Prenota' }}
+          </ion-button>
+        </div>
       </div>
     </div>
   </div>

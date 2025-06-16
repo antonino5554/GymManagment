@@ -1,0 +1,98 @@
+@import '../../theme/variables';
+
+html, body, ion-app {
+  height: 100%;
+}
+
+ion-content.visualizza-prenotazioni-content {
+  @extend .page-container;
+}
+
+.lava-lamp-bg {
+  @extend .lava-lamp-bg;
+
+  .blob {
+    @extend .blob;
+  }
+
+  .blob-1 { @extend .blob-1; }
+  .blob-2 { @extend .blob-2; }
+  .blob-3 { @extend .blob-3; }
+}
+
+.visualizza-prenotazioni-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.visualizza-prenotazioni-card {
+  @extend .card-glass;
+  padding: 1.5rem;
+  text-align: center;
+
+  h2 {
+    color: var(--color-dark);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  .empty {
+    font-style: italic;
+    color: var(--color-gray);
+    margin-top: 1rem;
+  }
+
+  .booking-item {
+    background: #f4f4f4;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+
+    &.past {
+      opacity: 0.6;
+    }
+
+    .info {
+      flex: 1;
+      text-align: left;
+
+      strong {
+        display: block;
+        font-weight: 600;
+        color: var(--color-dark);
+      }
+
+      p {
+        font-size: 0.85rem;
+        color: var(--color-gray);
+        margin: 0;
+      }
+    }
+
+    .badge {
+      background: linear-gradient(45deg, #3f5efb, #5a70f5);
+      color: white;
+      padding: 0.3rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .delete-btn {
+      --background: transparent;
+      --color: var(--color-danger);
+      font-size: 1rem;
+      padding: 0;
+      margin-left: auto;
+    }
+  }
+}
