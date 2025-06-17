@@ -16,16 +16,16 @@
 
   <div class="pt-admin-wrapper">
     <div class="pt-admin-card">
-      <h2 class="title">Personal Trainer</h2>
+      <h2 class ="title">Personal Trainer</h2>
 
       <ion-list class="pt-list-admin">
         <ion-item *ngFor="let pt of personalTrainers" class="pt-admin-item" lines="none">
-        <ion-label>
-          <h3>{{ pt.full_name }}</h3>
-          <p> {{ pt.email }}</p>
-          <p>{{ pt.phone }}</p>
-        </ion-label>
-      </ion-item>
+          <ion-label>
+            <h3>{{ pt.full_name }}</h3>
+            <p> Email: {{ pt.email }} </p>
+            <p> Numero di telefono: {{ pt.phone }} </p>
+          </ion-label>
+        </ion-item>
       </ion-list>
     </div>
   </div>
