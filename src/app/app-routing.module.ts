@@ -54,7 +54,10 @@ const routes: Routes = [
     path: 'visualizza-pt-admin',
     loadChildren: () => import('./visualizza-pt-admin/visualizza-pt-admin.module').then( m => m.VisualizzaPtAdminPageModule)
   },
-
+  {
+    path: 'visualizza-clienti-ad',
+    loadChildren: () => import('./visualizza-clienti-ad/visualizza-clienti-ad.module').then( m => m.VisualizzaClientiAdPageModule)
+  },
 
 
 ];
