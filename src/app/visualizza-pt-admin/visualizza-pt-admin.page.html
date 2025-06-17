@@ -1,13 +1,32 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>visualizza-pt-admin</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/admin-homepage"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Visualizza Personal Trainer</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">visualizza-pt-admin</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="visualizza-pt-admin-content" fullscreen="true">
+  <div class="lava-lamp-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <div class="pt-admin-wrapper">
+    <div class="pt-admin-card">
+      <h2 class ="title">Personal Trainer</h2>
+
+      <ion-list class="pt-list-admin">
+        <ion-item *ngFor="let pt of personalTrainers" class="pt-admin-item" lines="none">
+          <ion-label>
+            <h3>{{ pt.full_name }}</h3>
+            <p> Email: {{ pt.email }} </p>
+            <p> Numero di telefono: {{ pt.phone }} </p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
 </ion-content>
