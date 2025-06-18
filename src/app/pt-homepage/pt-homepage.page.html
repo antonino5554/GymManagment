@@ -1,36 +1,41 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Home Trainer</ion-title>
-    <ion-buttons slot="end">
-      <ion-button routerLink="/login" color="danger">
+<ion-header>  <!-- Intestazione della pagina -->
+  <ion-toolbar> <!-- Barra degli strumenti: contiene il titolo e il bottone "Esci" -->
+    <ion-title>Home Trainer</ion-title> <!-- Titolo pagina -->
+    <ion-buttons slot="end"> 
+      <!-- Bottone "Esci": a destra e di colore rosso-->
+      <ion-button routerLink="/login" color="danger"> <!--cliccando "Esci" torna alla pagina di login -->
         Esci
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="pt-home-content">
-  <div class="lava-lamp-bg">
+<ion-content class="pt-home-content"> <!-- Contenuto della pagina -->
+  <div class="lava-lamp-bg">  <!-- Sfondo decorativo definito in CSS -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
   </div>
 
-  <div class="pt-home-wrapper">
+  <div class="pt-home-wrapper"> <!-- Racchiude il contenuto della pagina in un wrapper -->
     <div class="pt-home-card">
-      <div class="pt-home-title">
-        <h2>Ciao{{ Username ? ', ' + Username : '' }}!</h2>
-        <p>Accedi alle funzionalità da Personal Trainer</p>
+      <div class="pt-home-title"> <!-- Testo iniziale home -->
+        <!-- messaggio di benvenuto personalizzato Angular Interpolation --> 
+        <h2>Ciao{{ Username ? ', ' + Username : '' }}!</h2> 
+        <p>Accedi alle funzionalità da Personal Trainer</p> <!-- Descrizione  -->
       </div>
 
+      <!-- Pulsanti di azione presenti nella home: -->
       <div class="pt-actions">
+        <!-- Bottone "Crea Allenamento" che porta alla nuova pagina -->
         <ion-button class="home-button gradient violet" expand="block" routerLink="/crea-allenamento">
-          <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+          <ion-icon name="add-circle-outline" slot="start"></ion-icon> <!-- L'icona è a sinistra -->
           Crea Allenamento
         </ion-button>
 
+        <!-- Bottone "Visualizza Allenamenti" che porta alla nuova pagina -->
         <ion-button class="home-button gradient blue" expand="block" routerLink="/visualizza-allenamenti">
-          <ion-icon name="eye-outline" slot="start"></ion-icon>
+          <ion-icon name="eye-outline" slot="start"></ion-icon> <!-- L'icona è a sinistra -->
           Visualizza Allenamenti
         </ion-button>
       </div>
