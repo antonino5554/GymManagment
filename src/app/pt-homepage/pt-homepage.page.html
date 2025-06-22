@@ -1,8 +1,8 @@
 <ion-header>  <!-- Intestazione della pagina -->
-  <ion-toolbar> <!-- Barra degli strumenti: contiene il titolo e il bottone "Esci" -->
+  <ion-toolbar> <!-- Barra degli strumenti: contiene il titolo e il pulsante "Esci" -->
     <ion-title>Home Trainer</ion-title> <!-- Titolo pagina -->
     <ion-buttons slot="end"> 
-      <!-- Bottone "Esci": a destra e di colore rosso-->
+      <!-- Pulsante "Esci": a destra e di colore rosso-->
       <ion-button routerLink="/login" color="danger"> <!--cliccando "Esci" torna alla pagina di login -->
         Esci
       </ion-button>
@@ -27,13 +27,13 @@
 
       <!-- Pulsanti di azione presenti nella home: -->
       <div class="pt-actions">
-        <!-- Bottone "Crea Allenamento" che porta alla nuova pagina -->
+        <!-- Pulsante "Crea Allenamento" che porta alla nuova pagina -->
         <ion-button class="home-button gradient violet" expand="block" routerLink="/crea-allenamento">
           <ion-icon name="add-circle-outline" slot="start"></ion-icon> <!-- L'icona è a sinistra -->
           Crea Allenamento
         </ion-button>
 
-        <!-- Bottone "Visualizza Allenamenti" che porta alla nuova pagina -->
+        <!-- Pulsante "Visualizza Allenamenti" che porta alla nuova pagina -->
         <ion-button class="home-button gradient blue" expand="block" routerLink="/visualizza-allenamenti">
           <ion-icon name="eye-outline" slot="start"></ion-icon> <!-- L'icona è a sinistra -->
           Visualizza Allenamenti

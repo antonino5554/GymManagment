@@ -1,61 +1,62 @@
-@import '../../theme/variables';
+@import '../../theme/variables'; // importa file che contiene variabili di stile globali
 
 html, body, ion-app {
   height: 100%;
 }
 
-ion-content.pt-home-content {
-  @extend .page-container;
+ion-content.pt-home-content { //contenuto principale della home
+  @extend .page-container; // applica tutti gli stili della classe page-container
 }
 
-.lava-lamp-bg {
-  @extend .lava-lamp-bg;
+.lava-lamp-bg { //sfondo animato
+  @extend .lava-lamp-bg; // applica tutti gli stili della classe lava-lamp-bg
   .blob { @extend .blob; }
   .blob-1 { @extend .blob-1; }
   .blob-2 { @extend .blob-2; }
   .blob-3 { @extend .blob-3; }
 }
 
-.pt-home-wrapper {
+.pt-home-wrapper { //contenitore
   position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 480px;
-  padding: 20px;
-  margin: 0 auto;
+  z-index: 1; //contenitore più "interno"
+  width: 100%; 
+  max-width: 480px; //limite di larghezza
+  padding: 20px; //spazio interno
+  margin: 0 auto; //centrato orizzontalmente
 }
 
 .pt-home-card {
-  @extend .card-glass;
-  padding: 2.5rem;
-  text-align: center;
+  @extend .card-glass; // applica tutti gli stili della classe card-glass
+  padding: 2.5rem; //spazio interno
+  text-align: center; //testo al centro della card
 }
 
-.pt-home-title h2 {
+.pt-home-title h2 { //stile titolo
   color: var(--color-dark);
   font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: 0.25rem;
 }
 
-.pt-home-title p {
+.pt-home-title p { //stile messaggio
   color: var(--color-gray);
   margin-bottom: 2rem;
 }
 
 .pt-actions {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; //i pulsanti sono disposti in verticale
   gap: 1.2rem;
 }
 
 .home-button {
-  @extend .btn-primary;
-  display: flex;
+  @extend .btn-primary;  // applica tutti gli stili della classe btn-primary
+  display: flex; // allinea testo e icona
   justify-content: center;
   align-items: center;
+  //centra orizzontalmente e verticalmente il contenuto
 
   ion-icon {
-    margin-right: 8px;
+    margin-right: 8px; //spazio a destra dell'icona 
   }
 }
