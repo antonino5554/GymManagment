@@ -19,7 +19,7 @@ ion-content.visualizza-content {
   .blob-3 { @extend .blob-3; }
 }
 
-.pt-wrapper {
+.ad-wrapper {
   position: relative;
   z-index: 1;
   width: 100%;
@@ -28,7 +28,7 @@ ion-content.visualizza-content {
   margin: 0 auto;
 }
 
-.pt-card {
+.ad-card {
   @extend .card-glass;
   padding: 2rem;
 }
@@ -41,7 +41,7 @@ ion-content.visualizza-content {
   color: var(--color-dark);
 }
 
-.pt-list {
+.ad-list {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -50,7 +50,7 @@ ion-content.visualizza-content {
   margin: 0;
 }
 
-.pt-item {
+.ad-item {
   --border-radius: 1rem;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
