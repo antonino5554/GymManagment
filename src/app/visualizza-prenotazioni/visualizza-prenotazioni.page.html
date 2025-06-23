@@ -1,31 +1,40 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/clienti-homepage"></ion-back-button>
+  <ion-toolbar> <!-- Barra superiore della pagina -->
+    <ion-buttons slot="start"> <!-- Gruppo di pulsanti a sinistra -->
+      <ion-back-button defaultHref="/clienti-homepage"></ion-back-button> <!-- Pulsante "indietro" che riporta alla homepage clienti -->
     </ion-buttons>
-    <ion-title>Le Tue Prenotazioni</ion-title>
+    <ion-title>Le Tue Prenotazioni</ion-title> <!-- Titolo della pagina, centrato nella toolbar -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="visualizza-prenotazioni-content" fullscreen="true">
-  <div class="lava-lamp-bg">
+<ion-content class="visualizza-prenotazioni-content" fullscreen="true"> <!-- Contenuto principale, a schermo intero -->
+  <div class="lava-lamp-bg"> <!-- Sfondo animato con "lava lamp effect" -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
   </div>
 
-  <div class="visualizza-prenotazioni-wrapper">
-    <div class="visualizza-prenotazioni-card">
-      <h2>Le Tue Prenotazioni</h2>
+  <div class="visualizza-prenotazioni-wrapper"> <!-- Wrapper che centra la card -->
+    <div class="visualizza-prenotazioni-card"> <!-- Card che contiene l'elenco delle prenotazioni -->
+      <h2>Le Tue Prenotazioni</h2> <!-- Titolo interno alla card -->
 
-      <div *ngIf="prenotazioni.length === 0" class="empty">Nessuna prenotazione trovata</div>  
+      <!-- Messaggio mostrato se la lista è vuota -->
+      <div *ngIf="prenotazioni.length === 0" class="empty">
+        Nessuna prenotazione trovata
+      </div>  
 
+      <!-- Lista delle prenotazioni, una per ogni oggetto in prenotazioni -->
       <div *ngFor="let booking of prenotazioni" class="booking-item" [class.past]="booking.past">
         <div class="info">
-          <strong>{{ booking.trainer_name }}</strong>
-          <p>{{ booking.start_time | date:'fullDate' }} - {{ booking.start_time | date:'shortTime' }}</p>
+          <strong>{{ booking.trainer_name }}</strong> <!-- Nome del personal trainer -->
+          <!-- Data e ora della prenotazione, formattate in modo leggibile -->
+          <p>
+            {{ booking.start_time | date:'fullDate' }} - {{ booking.start_time | date:'shortTime' }}
+          </p>
         </div>
-        <div class="badge">{{ booking.past ? 'Passata' : 'Futura' }}</div>
+        <div class="badge">
+          {{ booking.past ? 'Passata' : 'Futura' }} <!-- Mostra se la prenotazione è già avvenuta o è futura -->
+        </div>
       </div>
     </div>
   </div>

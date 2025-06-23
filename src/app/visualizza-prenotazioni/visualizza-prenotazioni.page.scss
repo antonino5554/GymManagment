@@ -1,68 +1,75 @@
-@import '../../theme/variables';
+@import '../../theme/variables'; /* Importa variabili di tema (colori, font, ecc.) */
 
+/* Imposta l'altezza a 100% per garantire layout a tutta pagina */
 html, body, ion-app {
   height: 100%;
 }
 
+/* Estende lo stile base del contenitore pagina */
 ion-content.visualizza-prenotazioni-content {
   @extend .page-container;
 }
 
+/* Sfondo animato con blobs */
 .lava-lamp-bg {
   @extend .lava-lamp-bg;
 
   .blob {
-    @extend .blob;
+    @extend .blob;        /* Stile di base dei blobs */
   }
 
-  .blob-1 { @extend .blob-1; }
+  .blob-1 { @extend .blob-1; } /* Blob personalizzato */
   .blob-2 { @extend .blob-2; }
   .blob-3 { @extend .blob-3; }
 }
 
+/* Wrapper centrale che limita la larghezza massima e centra la card */
 .visualizza-prenotazioni-wrapper {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 520px;
+  max-width: 520px;    /* Un po' più largo delle altre card per ospitare meglio la lista */
   padding: 20px;
   margin: 0 auto;
 }
 
+/* Card vetrosa che contiene tutte le prenotazioni */
 .visualizza-prenotazioni-card {
-  @extend .card-glass;
+  @extend .card-glass;   /* Effetto glassmorphism/vetro */
   padding: 1.5rem;
   text-align: center;
 
   h2 {
-    color: var(--color-dark);
+    color: var(--color-dark);   /* Titolo scuro e in evidenza */
     margin-bottom: 1rem;
     font-size: 1.5rem;
     font-weight: 800;
   }
 
+  /* Messaggio per lista vuota */
   .empty {
     font-style: italic;
     color: var(--color-gray);
     margin-top: 1rem;
   }
 
+  /* Singolo elemento prenotazione */
   .booking-item {
-    background: #f4f4f4;
+    background: #f4f4f4;          /* Sfondo chiaro per ogni prenotazione */
     border-radius: 10px;
     padding: 1rem;
     margin-bottom: 1rem;
-    display: flex;
+    display: flex;                 /* Layout flessibile: info a sinistra, badge a destra */
     justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
 
     &.past {
-      opacity: 0.6;
+      opacity: 0.6;               /* Se la prenotazione è passata, la si rende meno visibile */
     }
 
     .info {
-      flex: 1;
+      flex: 1;                    /* Occupa tutto lo spazio possibile */
       text-align: left;
 
       strong {
@@ -78,8 +85,9 @@ ion-content.visualizza-prenotazioni-content {
       }
     }
 
+    /* Badge che indica se è una prenotazione futura o passata */
     .badge {
-      background: linear-gradient(45deg, #3f5efb, #5a70f5);
+      background: linear-gradient(45deg, #3f5efb, #5a70f5); /* Gradient blu */
       color: white;
       padding: 0.3rem 0.6rem;
       border-radius: 12px;
@@ -87,9 +95,10 @@ ion-content.visualizza-prenotazioni-content {
       font-weight: 600;
     }
 
+    /* Eventuale pulsante elimina (se lo usi) */
     .delete-btn {
-      --background: transparent;
-      --color: var(--color-danger);
+      --background: transparent;           /* Nessuno sfondo */
+      --color: var(--color-danger);        /* Colore rosso (danger) */
       font-size: 1rem;
       padding: 0;
       margin-left: auto;

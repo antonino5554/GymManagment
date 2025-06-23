@@ -1,29 +1,29 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Homepage Clienti</ion-title>
-    <ion-buttons slot="end">
-      <ion-button color="danger" routerLink="/login"> 
+<ion-header>  <!-- Intestazione della pagina -->
+  <ion-toolbar>  <!-- Barra degli strumenti: contiene il titolo e il pulsante "Esci" -->
+    <ion-title>Homepage Clienti</ion-title> <!-- Titolo della pagina, centrato nella toolbar -->
+    <ion-buttons slot="end">  <!--Pulsante posizionato a destra della toolbar -->
+      <ion-button color="danger" routerLink="/login"> <!-- Pulsante "Esci" che riporta alla pagina di login -->
         Esci
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="clienti-home-content" fullscreen="true">
-  <div class="lava-lamp-bg">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
+<ion-content class="clienti-home-content" fullscreen="true"> <!-- Contenuto principale della pagina, a schermo intero -->
+  <div class="lava-lamp-bg"> <!-- Sfondo animato con "lava lamp effect" -->
+    <div class="blob blob-1"></div> <!-- Blob 1 -->
+    <div class="blob blob-2"></div> <!-- 2 -->
+    <div class="blob blob-3"></div> <!-- 3 -->
   </div>
 
-  <div class="clienti-wrapper">
-    <div class="clienti-card">
-      <div class="benvenuto">
-        <h2>Ciao{{ nomeUtente ? ', ' + nomeUtente : '' }}!</h2>
-        <p>Benvenuto nella tua area personale.</p>
+  <div class="clienti-wrapper"> <!-- Wrapper per centrare la card dei clienti -->
+    <div class="clienti-card"> <!-- Card contenente il benvenuto e i pulsanti -->
+      <div class="benvenuto"> <!-- Sezione di benvenuto all'utente -->
+        <h2>Ciao{{ nomeUtente ? ', ' + nomeUtente : '' }}!</h2> <!-- Messaggio di benvenuto, mostra il nome se disponibile -->
+        <p>Benvenuto nella tua area personale.</p> <!-- Sottotitolo di benvenuto -->
       </div>
       
-      <div class="top-buttons">
+      <div class="top-buttons"> <!-- Contenitore dei pulsanti di navigazione -->
         <ion-button expand="block" routerLink="/visualizza-pt" class="home-button gradient violet">
           Visualizza e Valuta<br/>Personal Trainer
         </ion-button>
@@ -32,7 +32,7 @@
           Prenota<br/>Allenamento
         </ion-button>
         
-        <ion-button expand="block" routerLink="/visualizza-prenotazioni" class="home-button gradient light">
+        <ion-button expand="block" routerLink="/visualizza-prenotazioni" class="home-button gradient dark">
           Visualizza<br/>Prenotazioni
         </ion-button>
       </div>

@@ -1,41 +1,49 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/clienti-homepage"></ion-back-button>
+  <ion-toolbar> <!-- Barra superiore della pagina -->
+    <ion-buttons slot="start"> <!-- Pulsante indietro posizionato a sinistra -->
+      <ion-back-button defaultHref="/clienti-homepage"></ion-back-button> <!-- Ritorna alla home clienti -->
     </ion-buttons>
-    <ion-title>Prenota Allenamento</ion-title>
+    <ion-title>Prenota Allenamento</ion-title> <!-- Titolo della pagina, centrato nella toolbar -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="prenota-allenamento-content" fullscreen="true">
-  <div class="lava-lamp-bg">
+<ion-content class="prenota-allenamento-content" fullscreen="true"> <!-- Contenuto principale, a schermo intero -->
+  <div class="lava-lamp-bg"> <!-- Sfondo animato moderno -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
   </div>
 
-  <div class="prenota-allenamento-wrapper">
-    <div class="prenota-allenamento-card">
-      <h2>Prenota Allenamento</h2>
+  <div class="prenota-allenamento-wrapper"> <!-- Wrapper che centra la card e limita la larghezza -->
+    <div class="prenota-allenamento-card"> <!-- Card centrale con tutto il contenuto -->
+      <h2>Prenota Allenamento</h2> <!-- Titolo della card -->
 
+      <!-- Sezione selezione trainer -->
       <div class="input-group">
         <h6>Seleziona Trainer</h6>
         <ion-select [(ngModel)]="selectedTrainerId" (ionChange)="caricaSlotDisponibili()" interface="popover" placeholder="Trainer">
+          <!-- Lista dei trainer disponibili, uno per ogni elemento di trainers -->
           <ion-select-option *ngFor="let trainer of trainers" [value]="trainer.id">
             {{ trainer.full_name }} - {{ trainer.specialization }}
           </ion-select-option>
         </ion-select>
       </div>
 
+      <!-- Sezione slot disponibili -->
       <div class="slot-container">
         <h3>Allenamenti Disponibili</h3>
+        <!-- Se nessuno slot è disponibile, mostra messaggio -->
         <div *ngIf="filteredSlots.length === 0" class="empty">Nessun allenamento disponibile.</div>
 
+        <!-- Cicla su tutti gli slot disponibili per il trainer selezionato -->
         <div *ngFor="let slot of filteredSlots" class="slot-item" [class.disabled]="slot.giaPrenotato">
           <div>
-            <strong>Inizio:<br/>{{ slot.start_time | date:'short' }}</strong><br>
+            <strong>
+              Inizio:<br/>{{ slot.start_time | date:'short' }}
+            </strong><br>
             Fine:<br/> {{ slot.end_time | date:'shortTime' }}
           </div>
+          <!-- Pulsante prenota che si disabilita se lo slot è già prenotato -->
           <ion-button fill="solid" size="small" class="gradient" [disabled]="slot.giaPrenotato" (click)="prenota(slot.id)">
             {{ slot.giaPrenotato ? 'Prenotato' : 'Prenota' }}
           </ion-button>
