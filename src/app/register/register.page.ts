@@ -36,19 +36,19 @@ export class RegisterPage {   // Questa classe rappresenta la pagina di registra
       .subscribe({
         next: (response) => {                         // Gestisce la risposta del server
           if (response.status === 'success') {       // Controlla se la registrazione è avvenuta con successo
-            this.mostraToast('Registrazione avvenuta con successo! Effettua ora il login.'); // Mostra un messaggio di successo
+            this.mostraToast('Registrazione avvenuta con successo! Effettua ora il login.', 'success'); // Mostra un messaggio di successo
             this.router.navigate(['/login']);       // Reindirizza alla pagina di login
           } else {
-            this.mostraToast('Errore: ' + response.message);   // Mostra un messaggio di errore se la registrazione fallisce
+            this.mostraToast('Errore: ' + response.message, 'danger');   // Mostra un messaggio di errore se la registrazione fallisce
           }
         },
         error: (err) => {                           // Gestisce gli errori della richiesta
-          this.mostraToast('Errore nella registrazione. Riprova.');   // Mostra un messaggio di errore se la richiesta fallisce
+          this.mostraToast('Errore nella registrazione. Riprova.', 'danger');   // Mostra un messaggio di errore se la richiesta fallisce
         }
       });
   }
 
-    async mostraToast(message: string, color: string = 'danger') {  // Metodo per mostrare un messaggio di notifica (toast)
+    async mostraToast(message: string, color: string ) {  // Metodo per mostrare un messaggio di notifica (toast)
     const toast = await this.toastController.create({     // Crea un toast con il messaggio e le opzioni specificate
       message,
       duration: 2000,

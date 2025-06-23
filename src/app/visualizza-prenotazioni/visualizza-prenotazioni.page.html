@@ -18,7 +18,7 @@
     <div class="visualizza-prenotazioni-card">
       <h2>Le Tue Prenotazioni</h2>
 
-      <div *ngIf="prenotazioni.length === 0" class="empty">Nessuna prenotazione trovata</div>
+      <div *ngIf="prenotazioni.length === 0" class="empty">Nessuna prenotazione trovata</div>  
 
       <div *ngFor="let booking of prenotazioni" class="booking-item" [class.past]="booking.past">
         <div class="info">
