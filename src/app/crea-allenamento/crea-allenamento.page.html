@@ -1,35 +1,36 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header>  <!-- Intestazione della pagina -->
+  <ion-toolbar> <!-- Barra degli strumenti: contiene il titolo e il pulsante indietro -->
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/pt-homepage"></ion-back-button>
+      <ion-back-button defaultHref="/pt-homepage"></ion-back-button> <!-- Torna alla homepage -->
     </ion-buttons>
-    <ion-title>Crea Allenamento</ion-title>
+    <ion-title>Crea Allenamento</ion-title> <!-- Titolo pagina -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="crea-allenamento-content">
-  <div class="lava-lamp-bg">
+<ion-content class="crea-allenamento-content"> <!-- Contenuto della pagina -->
+  <div class="lava-lamp-bg">  <!-- Sfondo decorativo definito in CSS -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
   </div>
 
-  <div class="crea-allenamento-wrapper">
+  <div class="crea-allenamento-wrapper"> <!-- Racchiude il contenuto della pagina in un wrapper -->
     <div class="crea-allenamento-card">
-      <h2>Crea Allenamento</h2>
+      <h2>Crea Allenamento</h2> <!-- Testo iniziale -->
 
-      <div class="input-group">
-        <label>Data Inizio</label>
+      <div class="input-group"> 
+        <label>Data Inizio</label> <!-- Chiede di scegliere data e ora di inizio -->
         <ion-datetime
           placeholder="Seleziona data e ora di inizio"
-          display-format="DD/MM/YYYY HH:mm"
+          display-format="DD/MM/YYYY HH:mm" 
           presentation="date-time"
           [(ngModel)]="dataInizio">
         </ion-datetime>
+        <!--Specifica formato della data e dell'ora -->
       </div>
 
       <div class="input-group">
-        <label>Data Fine</label>
+        <label>Data Fine</label> <!-- Chiede di scegliere data e ora di fine -->
         <ion-datetime
           placeholder="Seleziona data e ora di fine"
           display-format="DD/MM/YYYY HH:mm"
@@ -38,6 +39,7 @@
         </ion-datetime>
       </div>
 
+      <!-- Pulsante che chiama la funzione "crea allenamento" nel component.ts-->
       <ion-button expand="block" class="crea-button" (click)="creaAllenamento()">
         Crea Allenamento
       </ion-button>

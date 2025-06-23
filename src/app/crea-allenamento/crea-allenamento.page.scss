@@ -1,33 +1,31 @@
-@import '../../theme/variables';
+@import '../../theme/variables'; // importa file che contiene variabili di stile globali
 
-ion-content.crea-allenamento-content {
-  @extend .page-container;
+ion-content.crea-allenamento-content { //contenuto principale della home
+  @extend .page-container; // applica tutti gli stili della classe page-container
 }
 
-.lava-lamp-bg {
-  @extend .lava-lamp-bg;
-  .blob {
-    @extend .blob;
-  }
+.lava-lamp-bg { //sfondo animato
+  @extend .lava-lamp-bg; // applica tutti gli stili della classe lava-lamp-bg
+  .blob { @extend .blob; }
   .blob-1 { @extend .blob-1; }
   .blob-2 { @extend .blob-2; }
   .blob-3 { @extend .blob-3; }
 }
 
-.crea-allenamento-wrapper {
+.crea-allenamento-wrapper { //contenitore
   position: relative;
-  z-index: 1;
+  z-index: 1; //contenitore più "interno"
   width: 100%;
-  max-width: 480px;
-  padding: 20px;
-  margin: 0 auto;
+  max-width: 480px; //limite di larghezza
+  padding: 20px; //spazio interno
+  margin: 0 auto; //centrato orizzontalmente
 }
 
 .crea-allenamento-card {
-  @extend .card-glass;
-  text-align: center;
+  @extend .card-glass; // applica tutti gli stili della classe card-glass
+  text-align: center; //testo al centro della card
 
-  h2 {
+  h2 { //stile titolo
     color: var(--color-dark);
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
@@ -36,19 +34,21 @@ ion-content.crea-allenamento-content {
 
   .input-group {
     background: var(--color-light);
-    border-radius: 16px;
-    padding: 1rem;
+    border-radius: 16px; //bordi arrotondati
+    padding: 1rem; //spazio interno
     margin-bottom: 1.2rem;
+    
+    //il contenitore viene visibilmente separato
     label {
       font-size: 0.95rem;
       font-weight: 600;
       color: var(--color-dark);
       margin-bottom: 0.3rem;
-      display: block;
+      display: block; //rende label un blocco
       text-align: left;
     }
 
-    ion-datetime {
+    ion-datetime { //compotente data e ora visivamente interno al contenitore
       width: 100%;
       background: transparent;
       color: var(--color-dark);
@@ -56,6 +56,6 @@ ion-content.crea-allenamento-content {
   }
 
   .crea-button {
-    @extend .btn-primary;
+    @extend .btn-primary; // applica tutti gli stili della classe btn-primary
   }
 }

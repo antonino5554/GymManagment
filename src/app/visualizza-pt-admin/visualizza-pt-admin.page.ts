@@ -14,7 +14,7 @@ export class VisualizzaPtAdminPage implements OnInit {
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
-  this.http.get<any>('http://localhost:5000/api/admin/trainers',)
+  this.http.get<any>('http://localhost:5000/api/admin/trainers')
     .subscribe({
       next: (data) => {
         this.personalTrainers = data.data;

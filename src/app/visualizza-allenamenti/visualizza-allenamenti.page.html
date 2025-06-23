@@ -1,34 +1,38 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header>  <!-- Intestazione della pagina -->
+  <ion-toolbar> <!-- Barra degli strumenti: contiene il titolo e il pulsante "Esci" -->
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/pt-homepage"></ion-back-button>
+      <ion-back-button defaultHref="/pt-homepage"></ion-back-button> <!-- Torna alla homepage -->
     </ion-buttons>
-    <ion-title>Visualizza Allenamenti</ion-title>
+    <ion-title>Visualizza Allenamenti</ion-title> <!-- Titolo pagina -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="visualizza-allenamenti-content">
-  <div class="lava-lamp-bg">
+<ion-content class="visualizza-allenamenti-content"> <!-- Contenuto della pagina -->
+  <div class="lava-lamp-bg">  <!-- Sfondo decorativo definito in CSS -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
   </div>
 
-  <div class="visualizza-allenamenti-wrapper">
+  <div class="visualizza-allenamenti-wrapper"> <!-- Racchiude il contenuto della pagina in un wrapper -->
     <div class="visualizza-allenamenti-card">
-      <h2>Allenamenti</h2>
+      <h2>Allenamenti</h2> <!-- Testo iniziale -->
 
       <ion-list class="allenamenti">
+        <!-- Interazione di ogni elemento della lista allenamenti -->
         <ion-item *ngFor="let a of allenamenti" class="allenamenti-item" lines="none">
           <ion-label>
+            <!-- funzione che formatta data di inizio e fine dell'allenamento -->
             <h3>{{ formatDate(a.start_time) }} → {{ formatDate(a.end_time) }}</h3>
-            <p>👥 Prenotati: {{ a.booked_clients }} / {{ a.max_clients }}</p>
-            <p *ngIf="a.client_names">📝 Clienti: {{ a.client_names }}</p>
+            <p>👥 Prenotati: {{ a.booked_clients }} / {{ a.max_clients }}</p> <!-- Numero clienti prenotati -->
+            <!-- Se non ci sono clienti allora "nessuna prenotazione, altrimenti mostra i nomi" -->
+            <p *ngIf="a.client_names">📝 Clienti: {{ a.client_names }}</p> 
             <p *ngIf="!a.client_names">📝 Nessuna prenotazione</p>
           </ion-label>
         </ion-item>
       </ion-list>
 
+      <!--Se la lista è vuota-->
       <p *ngIf="allenamenti.length === 0" class="no-data-msg">
         Nessun allenamento programmato.
       </p>
