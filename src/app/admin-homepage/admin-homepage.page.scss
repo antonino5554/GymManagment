@@ -1,20 +1,18 @@
-@import '../../theme/variables';
+@import '../../theme/variables'; // importa file che contiene variabili di stile globali
 
 html, body, ion-app {
   height: 100%;
 }
 
-ion-content.admin-home-content {
-  @extend .page-container;
+ion-content.admin-home-content { //contenuto principale della home
+  @extend .page-container;       //applica tutti gli stili della classe page-container
 }
 
-.lava-lamp-bg {
-  @extend .lava-lamp-bg;
-
+.lava-lamp-bg { //sfondo animato
+  @extend .lava-lamp-bg; //applica tutti gli stili della classe lava-lamp-bg
   .blob {
     @extend .blob;
   }
-
   .blob-1, .blob-2, .blob-3 {
     @extend .blob-1;
     @extend .blob-2;
@@ -22,27 +20,27 @@ ion-content.admin-home-content {
   }
 }
 
-.admin-wrapper {
+.admin-wrapper {      //contenitore
   position: relative;
-  z-index: 1;
+  z-index: 1;         //contenitore più "interno"
   width: 100%;
-  max-width: 480px;
-  padding: 20px;
-  margin: 0 auto;
+  max-width: 480px;   //limite di larghezza
+  padding: 20px;      //spazio interno
+  margin: 0 auto;     //centrato orizzontalmente
 }
 
 .admin-card {
-  @extend .card-glass;
+  @extend .card-glass;  // applica tutti gli stili della classe card-glass
 }
 
-.benvenuto h2 {
+.benvenuto h2 { //stile titolo
   color: var(--color-dark);
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
-.benvenuto p {
+.benvenuto p {  //stile messaggio
   color: var(--color-gray);
   margin-bottom: 2rem;
 }
@@ -55,7 +53,7 @@ ion-content.admin-home-content {
 }
 
 .home-button {
-  @extend .btn-primary;
+  @extend .btn-primary;   //applica tutti gli stili della classe btn-primary
   text-transform: none;
 }
 
