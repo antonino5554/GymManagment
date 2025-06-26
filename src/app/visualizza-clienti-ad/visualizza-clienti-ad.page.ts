@@ -1,24 +1,29 @@
+//importa le funzionalità necessarie ad Angular e Ionic
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';           //permette la navigazione tra pagine
+import { HttpClient } from '@angular/common/http';  //HttpClient è necessario per fare richieste HTTP (POST e GET)
 
-@Component({
-  selector: 'app-visualizza-clienti-ad',
-  templateUrl: './visualizza-clienti-ad.page.html',
-  styleUrls: ['./visualizza-clienti-ad.page.scss'],
-  standalone: false // indica che questo componente non è un componente standalone, ma fa parte di un modulo Angular
+@Component({  //Definisce il componente Angular
+  selector: 'app-visualizza-clienti-ad',            //Nome del selettore del componente, usato per inserire il componente nel template HTML
+  templateUrl: './visualizza-clienti-ad.page.html', //File HTML che definisce il layout della pagina
+  styleUrls: ['./visualizza-clienti-ad.page.scss'], //File CSS che definisce lo stile della pagina
+  standalone: false //indica che questo componente non è un componente standalone, ma fa parte di un modulo Angular
 })
 export class VisualizzaClientiAdPage implements OnInit {
- customers: any[] = [];
+ customers: any[] = []; //array che conterrà i clienti registrati
 
+  //Il costruttore viene utilizzato per inizializzare il componente con i servizi HttpClient e Router
   constructor(private http: HttpClient, private router: Router) {}
 
+  //Metodo che viene chiamato quando il componente viene inizializzato
   ngOnInit() {
-  this.http.get<any>('http://localhost:5000/api/admin/customers',)
+  this.http.get<any>('http://localhost:5000/api/admin/customers',)  //effettua una richiesta GET per ottenere i clienti
     .subscribe({
+      //la richietsa ha successo: salva i dati nell'array
       next: (data) => {
         this.customers = data.data;
       },
+      //si verifica un errore, viene stampato un messaggio.
       error: (err) => {
         console.error('Errore nel caricamento dei PT', err);
       }

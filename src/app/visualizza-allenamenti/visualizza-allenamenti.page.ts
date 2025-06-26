@@ -3,19 +3,19 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';           //permette la navigazione tra pagine
 import { HttpClient } from '@angular/common/http';  //HttpClient è necessario per fare richieste HTTP (POST e GET)
 
-@Component({   // Definisce il componente Angular
-  selector: 'app-visualizza-allenamenti',             // Nome del selettore del componente, usato per inserire il componente nel template HTML
-  templateUrl: './visualizza-allenamenti.page.html',  // File HTML che definisce il layout della pagina
-  styleUrls: ['./visualizza-allenamenti.page.scss'],  // File CSS che definisce lo stile della pagina
+@Component({   //Definisce il componente Angular
+  selector: 'app-visualizza-allenamenti',             //Nome del selettore del componente, usato per inserire il componente nel template HTML
+  templateUrl: './visualizza-allenamenti.page.html',  //File HTML che definisce il layout della pagina
+  styleUrls: ['./visualizza-allenamenti.page.scss'],  //File CSS che definisce lo stile della pagina
   standalone: false
 })
 export class VisualizzaAllenamentiPage implements OnInit {
   allenamenti: any[] = []; //array che conterrà gli allenamenti ricevuti
 
-  // Il costruttore viene utilizzato per inizializzare il componente con i servizi HttpClient e Router
+  //Il costruttore viene utilizzato per inizializzare il componente con i servizi HttpClient e Router
   constructor(private http: HttpClient, private router: Router) {} 
 
-  // Metodo che viene chiamato quando il componente viene inizializzato
+  //Metodo che viene chiamato quando il componente viene inizializzato
   ngOnInit() {
     this.http.get<any>('http://localhost:5000/api/trainer/schedule') //effettua una richiesta GET per ottenere gli allenamenti
     .subscribe({

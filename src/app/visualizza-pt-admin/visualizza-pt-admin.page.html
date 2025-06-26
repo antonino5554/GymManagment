@@ -1,26 +1,27 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header>  <!-- Intestazione della pagina -->
+  <ion-toolbar> <!-- Barra degli strumenti: contiene il titolo e il pulsante "Esci" -->
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/admin-homepage"></ion-back-button>
+      <ion-back-button defaultHref="/admin-homepage"></ion-back-button> <!-- Torna alla homepage -->
     </ion-buttons>
-    <ion-title>Visualizza Personal Trainer</ion-title>
+    <ion-title>Visualizza Personal Trainer</ion-title>  <!-- Titolo pagina -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="visualizza-pt-admin-content" fullscreen="true">
-  <div class="lava-lamp-bg">
+<ion-content class="visualizza-pt-admin-content" fullscreen="true"> <!-- Contenuto della pagina -->
+  <div class="lava-lamp-bg">  <!-- Sfondo decorativo definito in CSS -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
   </div>
 
-  <div class="pt-admin-wrapper">
+  <div class="pt-admin-wrapper">  <!-- Racchiude il contenuto della pagina in un wrapper -->
     <div class="pt-admin-card">
-      <h2 class ="title">Personal Trainer</h2>
+      <h2 class ="title">Personal Trainer</h2>  <!-- Testo iniziale -->
 
       <ion-list class="pt-list-admin">
+        <!-- Interazione di ogni elemento della lista dei personal trainer -->
         <ion-item *ngFor="let pt of personalTrainers" class="pt-admin-item" lines="none">
-          <ion-label>
+          <ion-label> <!-- Informazioni del personal trainer -->
             <h3>{{ pt.full_name }}</h3>
             <p> Email: {{ pt.email }} </p>
             <p> Numero di telefono: {{ pt.phone }} </p>

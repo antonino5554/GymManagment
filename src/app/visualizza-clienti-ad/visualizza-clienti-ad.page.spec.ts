@@ -1,16 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { VisualizzaClientiAdPage } from './visualizza-clienti-ad.page';
+//importa le funzionalità necessarie ad Angular
+import { ComponentFixture, TestBed } from '@angular/core/testing';      //permette di creare un ambiente di test 
+import { VisualizzaClientiAdPage } from './visualizza-clienti-ad.page'; //permette di accedere al componente che vogliamo testare
 
+//definisce un insieme di test per la pagina
 describe('VisualizzaClientiAdPage', () => {
-  let component: VisualizzaClientiAdPage;
-  let fixture: ComponentFixture<VisualizzaClientiAdPage>;
+  let component: VisualizzaClientiAdPage;                 //oggetto pagina
+  let fixture: ComponentFixture<VisualizzaClientiAdPage>; //serve per testare tutto insieme unendo l'oggetto e HTML
 
+  //eseguito prima di ogni test
   beforeEach(() => {
-    fixture = TestBed.createComponent(VisualizzaClientiAdPage);
+    fixture = TestBed.createComponent(VisualizzaClientiAdPage); //crea il componente da testare in un ambiente isolato 
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.detectChanges();                                    //esegue il ciclo di vita del componente
   });
 
+  //verifica che il componente sia stato creato correttamente: che esista e sia funzionante
   it('should create', () => {
     expect(component).toBeTruthy();
   });

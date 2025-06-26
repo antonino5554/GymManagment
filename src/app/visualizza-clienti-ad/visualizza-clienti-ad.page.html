@@ -1,26 +1,27 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header>  <!-- Intestazione della pagina -->
+  <ion-toolbar> <!-- Barra degli strumenti: contiene il titolo e il pulsante "Esci" -->
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/admin-homepage"></ion-back-button>
+      <ion-back-button defaultHref="/admin-homepage"></ion-back-button> <!-- Torna alla homepage -->
     </ion-buttons>
-    <ion-title>Visualizza Clienti</ion-title>
+    <ion-title>Visualizza Clienti</ion-title> <!-- Titolo pagina -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="visualizza-content" fullscreen="true">
-  <div class="lava-lamp-bg">
+<ion-content class="visualizza-content" fullscreen="true">  <!-- Contenuto della pagina -->
+  <div class="lava-lamp-bg">  <!-- Sfondo decorativo definito in CSS -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
   </div>
 
-  <div class="ad-wrapper">
+  <div class="ad-wrapper">  <!-- Racchiude il contenuto della pagina in un wrapper -->
     <div class="ad-card">
-      <h2 class="title">Tutti i Clienti</h2>
+      <h2 class="title">Tutti i Clienti</h2>  <!-- Testo iniziale -->
 
       <ion-list class="ad-list">
+        <!-- Interazione di ogni elemento della lista di clienti -->
         <ion-item *ngFor="let customer of customers" class="ad-item" lines="none">
-          <ion-label>
+          <ion-label> <!-- Informazioni del cliente -->
             <h3>{{ customer.full_name }}</h3>
             <p>Email: {{ customer.email }}</p>
             <p>Telefono: {{ customer.phone }}</p>

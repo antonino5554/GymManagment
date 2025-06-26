@@ -1,16 +1,20 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { VisualizzaPtAdminPage } from './visualizza-pt-admin.page';
+//importa le funzionalità necessarie ad Angular
+import { ComponentFixture, TestBed } from '@angular/core/testing';  //permette di creare un ambiente di test 
+import { VisualizzaPtAdminPage } from './visualizza-pt-admin.page'; //permette di accedere al componente che vogliamo testare
 
+//definisce un insieme di test per la pagina
 describe('VisualizzaPtAdminPage', () => {
-  let component: VisualizzaPtAdminPage;
-  let fixture: ComponentFixture<VisualizzaPtAdminPage>;
+  let component: VisualizzaPtAdminPage;                 //oggetto pagina
+  let fixture: ComponentFixture<VisualizzaPtAdminPage>; //serve per testare tutto insieme unendo l'oggetto e HTML
 
+  //eseguito prima di ogni test
   beforeEach(() => {
-    fixture = TestBed.createComponent(VisualizzaPtAdminPage);
+    fixture = TestBed.createComponent(VisualizzaPtAdminPage); //crea il componente da testare in un ambiente isolato 
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixture.detectChanges();                                  //esegue il ciclo di vita del componente
   });
 
+  //verifica che il componente sia stato creato correttamente: che esista e sia funzionante
   it('should create', () => {
     expect(component).toBeTruthy();
   });

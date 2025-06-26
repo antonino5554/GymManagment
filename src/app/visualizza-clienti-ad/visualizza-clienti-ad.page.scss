@@ -1,39 +1,36 @@
-@import '../../theme/variables';
+@import '../../theme/variables';  //importa file che contiene variabili di stile globali
 
 html, body, ion-app {
   height: 100%;
 }
 
-ion-content.visualizza-content {
-  @extend .page-container;
+ion-content.visualizza-content{   //contenuto principale della pagina
+  @extend .page-container;        //applica tutti gli stili della classe page-container
 }
 
-.lava-lamp-bg {
-  @extend .lava-lamp-bg;
-
-  .blob {
-    @extend .blob;
-  }
+.lava-lamp-bg { //sfondo animato
+  @extend .lava-lamp-bg; //applica tutti gli stili della classe lava-lamp-bg
+  .blob { @extend .blob; }
   .blob-1 { @extend .blob-1; }
   .blob-2 { @extend .blob-2; }
   .blob-3 { @extend .blob-3; }
 }
 
-.ad-wrapper {
+.ad-wrapper { //contenitore
   position: relative;
-  z-index: 1;
+  z-index: 1; //contenitore più "interno"
   width: 100%;
-  max-width: 480px;
-  padding: 20px;
-  margin: 0 auto;
+  max-width: 480px; //limite di larghezza
+  padding: 20px;  //spazio interno
+  margin: 0 auto; //centrato orizzontalmente
 }
 
 .ad-card {
-  @extend .card-glass;
-  padding: 2rem;
+  @extend .card-glass;  //applica tutti gli stili della classe card-glass
+  padding: 2rem;  //spazio interno
 }
 
-.title {
+.title { //stile titolo
   text-align: center;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
@@ -41,7 +38,7 @@ ion-content.visualizza-content {
   color: var(--color-dark);
 }
 
-.ad-list {
+.ad-list { //struttura la lista in modo verticale
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -50,7 +47,7 @@ ion-content.visualizza-content {
   margin: 0;
 }
 
-.ad-item {
+.ad-item { //aspetto degli elementi della lista
   --border-radius: 1rem;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -59,12 +56,12 @@ ion-content.visualizza-content {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   --background: #c186e9cc;
 
-  &:hover {
+  &:hover { //zoom al passaggio del mause
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   }
 
-  ion-label {
+  ion-label { //stile del testo in ogni elemento
     h3 {
       font-size: 1.1rem;
       font-weight: 700;

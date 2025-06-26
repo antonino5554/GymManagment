@@ -1,15 +1,15 @@
-@import '../../theme/variables'; // importa file che contiene variabili di stile globali
+@import '../../theme/variables'; //importa file che contiene variabili di stile globali
 
 html, body, ion-app {
   height: 100%;
 }
 
-ion-content.visualizza-allenamenti-content { //contenuto principale della home
-  @extend .page-container; // applica tutti gli stili della classe page-container
+ion-content.visualizza-allenamenti-content{   //contenuto principale della home
+  @extend .page-container;                    //applica tutti gli stili della classe page-container
 }
 
 .lava-lamp-bg { //sfondo animato
-  @extend .lava-lamp-bg; // applica tutti gli stili della classe lava-lamp-bg
+  @extend .lava-lamp-bg; //applica tutti gli stili della classe lava-lamp-bg
   .blob { @extend .blob; }
   .blob-1 { @extend .blob-1; }
   .blob-2 { @extend .blob-2; }
@@ -26,7 +26,7 @@ ion-content.visualizza-allenamenti-content { //contenuto principale della home
 }
 
 .visualizza-allenamenti-card {
-  @extend .card-glass; // applica tutti gli stili della classe card-glass
+  @extend .card-glass; //applica tutti gli stili della classe card-glass
   padding: 2rem; //spazio interno
   text-align: center; //testo al centro della card
 
