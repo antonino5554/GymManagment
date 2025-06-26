@@ -60,3 +60,11 @@ ion-content.pt-home-content { //contenuto principale della home
     margin-right: 8px; //spazio a destra dell'icona 
   }
 }
+
+.gradient.violet { 
+  background: linear-gradient(to right, #a855f7, #6366f1);
+}
+
+.gradient.blue { 
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+}

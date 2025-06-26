@@ -1,34 +1,41 @@
-@import '../../theme/variables';
+@import '../../theme/variables'; /* Importa le variabili di tema (colori, spaziature, ecc.) */
 
+/* Imposta l’altezza a 100% su html, body e ion-app per consentire layout a tutta pagina */
 html, body, ion-app {
   height: 100%;
 }
 
+/* Applica lo stile di .page-container a ion-content.login-content (layout di base della pagina di login) */
 ion-content.login-content {
   @extend .page-container;
 }
 
+/* Sfondo animato "lava lamp" */
 .lava-lamp-bg {
   @extend .lava-lamp-bg;
 
+  /* Tutti i blob condividono lo stile di base .blob */
   .blob {
     @extend .blob;
   }
 
+  /* Ogni blob prende il suo stile specifico (animazioni, posizionamento, colori) */
   .blob-1 { @extend .blob-1; }
   .blob-2 { @extend .blob-2; }
   .blob-3 { @extend .blob-3; }
 }
 
+/* Wrapper che centra il contenuto della login bubble */
 .login-wrapper {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 420px;
-  padding: 20px;
-  margin: 0 auto;
+  position: relative;    /* Posizionamento relativo per z-index e sovrapposizioni */
+  z-index: 1;            /* Fa sì che il contenuto sia sopra lo sfondo animato */
+  width: 100%;           /* Occupa tutta la larghezza disponibile */
+  max-width: 420px;      /* Larghezza massima per schermi grandi */
+  padding: 20px;         /* Spazio interno */
+  margin: 0 auto;        /* Centra orizzontalmente */
 }
 
+/* Contenitore ulteriore per il form, se necessario */
 .login-container {
   width: 100%;
   max-width: 420px;
@@ -36,10 +43,12 @@ ion-content.login-content {
   z-index: 1;
 }
 
+/* La "bolla" del login ha uno stile vetroso, effetto card trasparente */
 .login-bubble {
   @extend .card-glass;
 }
 
+/* Titolo nella login bubble: colore scuro, margine e font grandi */
 .login-bubble h2 {
   color: var(--color-dark);
   margin-bottom: 0.5rem;
@@ -47,31 +56,37 @@ ion-content.login-content {
   font-weight: 800;
 }
 
+/* Sottotitolo nella login bubble: colore grigio, margine e font medio */
 .login-bubble p {
   color: var(--color-gray);
   margin-bottom: 2rem;
   font-size: 0.95rem;
 }
 
+/* Gruppo input: eredita lo stile base per input group */
 .input-group {
   @extend .input-group;
 }
 
+/* Pulsante di login: stile principale del tema */
 .login-button {
   @extend .btn-primary;
 }
 
+/* Effetto al click sul pulsante: leggero zoom in giù e ombra */
 .login-button:active {
-  transform: scale(0.98);
-  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+  transform: scale(0.98); /* Rimpicciolisce leggermente il bottone */
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2); /* Ombra viola */
 }
 
+/* Footer della login bubble: testo piccolo, colore grigio */
 .login-footer {
   margin-top: 1.5rem;
   font-size: 0.9rem;
   color: var(--color-gray);
 }
 
+/* Link nel footer: colore primario, più in evidenza, con transizione */
 .login-footer a {
   color: var(--color-primary);
   font-weight: 600;
@@ -79,6 +94,7 @@ ion-content.login-content {
   transition: color 0.25s ease;
 }
 
+/* Effetto hover sul link: cambia colore sul passaggio del mouse */
 .login-footer a:hover {
   color: var(--color-secondary);
 }

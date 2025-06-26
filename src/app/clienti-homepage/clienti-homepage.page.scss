@@ -1,73 +1,73 @@
-@import '../../theme/variables';
+@import '../../theme/variables'; // importa file che contiene variabili di stile globali
 
-html, body, ion-app {
+html, body, ion-app { // Imposta altezza al 100% per garantire che il contenuto si estenda per tutta l'altezza della pagina
   height: 100%;
 }
 
-ion-content.clienti-home-content {
-  @extend .page-container;
+ion-content.clienti-home-content { // contenuto principale della home
+  @extend .page-container; // applica tutti gli stili della classe page-container
 }
 
-.lava-lamp-bg {
-  @extend .lava-lamp-bg;
+.lava-lamp-bg { // sfondo animato
+  @extend .lava-lamp-bg; // applica tutti gli stili della classe lava-lamp-bg
 
-  .blob {
-    @extend .blob;
+  .blob {  // estende .blob;
+    @extend .blob; 
   }
 
-  .blob-1, .blob-2, .blob-3 {
-    @extend .blob-1;
+  .blob-1, .blob-2, .blob-3 { // estende .blob-1, .blob-2, .blob-3;
+    @extend .blob-1; 
     @extend .blob-2;
     @extend .blob-3;
   }
 }
 
-.clienti-wrapper {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 480px;
-  padding: 20px;
-  margin: 0 auto;
+.clienti-wrapper {  // contenitore principale
+  position: relative; 
+  z-index: 1; // contenitore più "interno"
+  width: 100%; 
+  max-width: 480px;  
+  padding: 20px; 
+  margin: 0 auto; 
 }
 
-.clienti-card {
-  @extend .card-glass;
+.clienti-card { //estende .card-glass;
+  @extend .card-glass; 
 }
 
-.benvenuto h2 {
-  color: var(--color-dark);
-  font-size: 1.6rem;
+.benvenuto h2 { // Titolo di benvenuto
+  color: var(--color-dark); 
+  font-size: 1.6rem; 
   margin-bottom: 0.5rem;
   font-weight: 700;
 }
 
-.benvenuto p {
-  color: var(--color-gray);
-  margin-bottom: 2rem;
+.benvenuto p { // Sottotitolo di benvenuto
+  color: var(--color-gray); 
+  margin-bottom: 2rem; 
 }
 
-.top-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+.top-buttons { // Contenitore per i pulsanti principali
+  display: flex; 
+  flex-direction: column; // Imposta la direzione dei pulsanti in colonna
+  gap: 1rem; // Spazio tra i pulsanti
+  margin-bottom: 1.5rem; 
 }
 
-.home-button {
-  @extend .btn-primary;
+.home-button {  // Pulsante principale della home
+  @extend .btn-primary; // Estende gli stili del pulsante primario
   text-transform: none;
 }
 
 
-.gradient.violet {
+.gradient.violet {  // Gradient viola del pulsante
   background: linear-gradient(to right, #a855f7, #6366f1);
 }
 
-.gradient.blue {
+.gradient.blue {  // Gradient blu del pulsante
   background: linear-gradient(to right, #3b82f6, #06b6d4);
 }
 
-.gradient.dark {
-  background: linear-gradient(to right, #4b5563, #6b7280);
+.gradient.dark {  // Gradient scuro del pulsante
+  background: linear-gradient(to right, #4b5563, #6b7280); 
 }

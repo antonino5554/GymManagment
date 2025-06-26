@@ -1,35 +1,40 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/clienti-homepage"></ion-back-button>
+  <ion-toolbar> <!-- Barra superiore della pagina -->
+    <ion-buttons slot="start"> <!-- Pulsante indietro posizionato a sinistra -->
+      <ion-back-button defaultHref="/clienti-homepage"></ion-back-button> <!-- Ritorna alla home clienti -->
     </ion-buttons>
-    <ion-title>Visualizza PT</ion-title>
+    <ion-title>Visualizza PT</ion-title> <!-- Titolo centrale della pagina -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="visualizza-content" fullscreen="true">
-  <div class="lava-lamp-bg">
+<ion-content class="visualizza-content" fullscreen="true"> <!-- Contenuto principale a schermo intero -->
+  <div class="lava-lamp-bg"> <!-- Sfondo animato moderno -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
   </div>
 
-  <div class="pt-wrapper">
-    <div class="pt-card">
-      <h2 class="title">I tuoi Personal Trainer</h2>
+  <div class="pt-wrapper"> <!-- Wrapper che centra la card dei trainer -->
+    <div class="pt-card"> <!-- Card centrale con elenco dei PT -->
+      <h2 class="title">I tuoi Personal Trainer</h2> <!-- Titolo della card -->
 
-      <ion-list class="pt-list">
+      <ion-list class="pt-list"> <!-- Lista Ionic che conterrà ogni personal trainer -->
+        <!-- Cicla su tutti i personal trainer -->
         <ion-item *ngFor="let pt of personalTrainers" class="pt-item" lines="none">
-        <ion-label>
-          <h3>{{ pt.full_name }}</h3>
-          <p *ngIf="pt.specialization">💪 {{ pt.specialization }}</p>
-          <p *ngIf="pt.avg_rating !== null">⭐ Valutazione media: {{ pt.avg_rating | number:'1.1-1' }}/5</p>
-          <p *ngIf="pt.avg_rating === null">⭐ Nessuna valutazione</p>
-        </ion-label>
-        <ion-button fill="clear" class="details-btn" routerLink="/valuta-pt">
-         Valuta
-        </ion-button>
-      </ion-item>
+          <ion-label>
+            <h3>{{ pt.full_name }}</h3> <!-- Nome del personal trainer -->
+            <p *ngIf="pt.specialization">💪 {{ pt.specialization }}</p> <!-- Mostra la specializzazione se esiste -->
+            <p *ngIf="pt.avg_rating !== null">
+              ⭐ Valutazione media: {{ pt.avg_rating | number:'1.1-1' }}/5
+            </p> <!-- Mostra la valutazione media se presente -->
+            <p *ngIf="pt.avg_rating === null">
+              ⭐ Nessuna valutazione
+            </p> <!-- Messaggio se il trainer non ha ancora valutazioni -->
+          </ion-label>
+          <ion-button fill="clear" class="details-btn" routerLink="/valuta-pt">
+            Valuta
+          </ion-button> <!-- Pulsante per accedere alla pagina di valutazione per quel PT -->
+        </ion-item>
       </ion-list>
     </div>
   </div>

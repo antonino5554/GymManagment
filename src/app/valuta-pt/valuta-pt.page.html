@@ -1,36 +1,43 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/clienti-homepage"></ion-back-button>
+  <ion-toolbar> <!-- Barra superiore -->
+    <ion-buttons slot="start"> <!-- Pulsanti posizionati all'inizio (a sinistra) -->
+      <ion-back-button defaultHref="/clienti-homepage"></ion-back-button> <!-- Pulsante "indietro" che riporta alla homepage clienti se premuto -->
     </ion-buttons>
-    <ion-title>Valuta Trainer</ion-title>
+    <ion-title>Valuta Trainer</ion-title> <!-- Titolo centrale nella toolbar -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="valuta-content">
-  <div class="lava-lamp-bg">
+<ion-content class="valuta-content"> <!-- Contenuto principale della pagina -->
+  <div class="lava-lamp-bg"> <!-- Sfondo animato "lava lamp" -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
   </div>
 
-  <div class="valuta-wrapper">
-    <div class="valuta-card">
-      <h2>Lascia una valutazione</h2>
-      <p>Valuta il tuo personal trainer</p>
+  <div class="valuta-wrapper"> <!-- Wrapper che centra e limita la larghezza della card -->
+    <div class="valuta-card"> <!-- Card centrale per la valutazione -->
+      <h2>Lascia una valutazione</h2> <!-- Titolo della sezione -->
+      <p>Valuta il tuo personal trainer</p> <!-- Istruzione -->
 
+      <!-- Selettore trainer -->
       <ion-item class="input-group" lines="none">
-        <ion-icon name="people-outline" slot="start"></ion-icon>
+        <ion-icon name="people-outline" slot="start"></ion-icon> <!-- Icona utente/gruppo -->
         <ion-select [(ngModel)]="selectedTrainerId" interface="popover" placeholder="Seleziona Trainer">
+          <!-- Opzioni generate dinamicamente dalla lista 'trainers' -->
           <ion-select-option *ngFor="let t of trainers" [value]="t.id">{{ t.full_name }}</ion-select-option>
         </ion-select>
       </ion-item>
 
+      <!-- Sezione stelle di valutazione -->
       <div class="rating-stars">
-        <ion-icon *ngFor="let s of stars; let i = index" [name]="i < rating ? 'star' : 'star-outline'"(click)="setRating(i + 1)">
+        <!-- Mostra tante stelle quante sono in 'stars'; quelle cliccate diventano piene -->
+        <ion-icon *ngFor="let s of stars; let i = index"
+                  [name]="i < rating ? 'star' : 'star-outline'"
+                  (click)="setRating(i + 1)">
         </ion-icon>
       </div>
       
+      <!-- Pulsante per inviare la valutazione -->
       <ion-button expand="block" class="submit-button" (click)="submitRating()">
         Invia Valutazione
       </ion-button>

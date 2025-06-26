@@ -1,79 +1,78 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button routerLink="/login">
-        <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
+  <ion-toolbar> <!-- Barra superiore con titolo e pulsante indietro -->
+    <ion-buttons slot="start"> <!-- Posiziona il pulsante all'inizio della toolbar -->
+      <ion-button routerLink="/login"> <!-- Pulsante che porta alla pagina di login -->
+        <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon> <!-- Icona "indietro" -->
       </ion-button>
     </ion-buttons>
-    <ion-title>Registrati</ion-title>
+    <ion-title>Registrati</ion-title> <!-- Titolo centrale della pagina -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="register-content" fullscreen="true">
-  <div class="lava-lamp-bg">
+<ion-content class="register-content" fullscreen="true"> <!-- Contenuto principale della pagina, tutto schermo -->
+  <div class="lava-lamp-bg"> <!-- Sfondo animato "lava lamp" come nelle altre pagine -->
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
     <div class="blob blob-3"></div>
   </div>
 
-  <div class="register-wrapper">
-    <div class="register-card">
-      <div class="register-header">
+  <div class="register-wrapper"> <!-- Wrapper per centrare il contenuto della card -->
+    <div class="register-card"> <!-- Card della registrazione (box centrale) -->
+      <div class="register-header"> <!-- Header della card con titolo e sottotitolo -->
         <h2>Crea il tuo account</h2>
         <p>Compila i campi per iniziare</p>
       </div>
 
-      <form (ngSubmit)="register()" class="register-form">
-        <div class="input-group">
-          <ion-icon name="person-outline" slot="start"></ion-icon>
+      <form (ngSubmit)="register()" class="register-form"> <!-- Form di registrazione, chiama register() al submit -->
+        <div class="input-group"> <!-- Campo username -->
+          <ion-icon name="person-outline" slot="start"></ion-icon> <!-- Icona utente -->
           <ion-input placeholder="Username" [(ngModel)]="username" name="username" required></ion-input>
         </div>
 
-        <div class="input-group">
-          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <div class="input-group"> <!-- Campo password -->
+          <ion-icon name="lock-closed-outline" slot="start"></ion-icon> <!-- Icona lucchetto -->
           <ion-input placeholder="Password" type="password" [(ngModel)]="password" name="password" required></ion-input>
         </div>
 
-        <div class="input-group">
-          <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <div class="input-group"> <!-- Campo email -->
+          <ion-icon name="mail-outline" slot="start"></ion-icon> <!-- Icona mail -->
           <ion-input placeholder="Email" type="email" [(ngModel)]="email" name="email" required></ion-input>
         </div>
 
-        <div class="input-group">
-          <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+        <div class="input-group"> <!-- Campo nome completo -->
+          <ion-icon name="person-circle-outline" slot="start"></ion-icon> <!-- Icona profilo -->
           <ion-input placeholder="Nome completo" [(ngModel)]="full_name" name="full_name" required></ion-input>
         </div>
 
-        <div class="input-group">
-          <ion-icon name="call-outline" slot="start"></ion-icon>
+        <div class="input-group"> <!-- Campo telefono -->
+          <ion-icon name="call-outline" slot="start"></ion-icon> <!-- Icona telefono -->
           <ion-input placeholder="Telefono" type="tel" [(ngModel)]="phone" name="phone" required></ion-input>
         </div>
 
-      <div class="role-selection">
-        <ion-label class="role-label">Seleziona il tuo ruolo</ion-label>
-        <ion-segment mode="md" [(ngModel)]="role" name="role" value="customer" class="custom-segment">
-          <ion-segment-button value="customer">
-            <ion-icon name="person-outline"></ion-icon>
-            <ion-label>Cliente</ion-label>
-          </ion-segment-button>
-          <ion-segment-button value="trainer">
-            <ion-icon name="barbell-outline"></ion-icon>
-            <ion-label>Trainer</ion-label>
-          </ion-segment-button>
-          <ion-segment-button value="admin">
-            <ion-icon name="settings-outline"></ion-icon>
-            <ion-label>Admin</ion-label>
-          </ion-segment-button>
-        </ion-segment>
-      </div>
-
+        <div class="role-selection"> <!-- Selezione del ruolo utente -->
+          <ion-label class="role-label">Seleziona il tuo ruolo</ion-label>
+          <ion-segment mode="md" [(ngModel)]="role" name="role" value="customer" class="custom-segment">
+            <ion-segment-button value="customer">
+              <ion-icon name="person-outline"></ion-icon>
+              <ion-label>Cliente</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="trainer">
+              <ion-icon name="barbell-outline"></ion-icon>
+              <ion-label>Trainer</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="admin">
+              <ion-icon name="settings-outline"></ion-icon>
+              <ion-label>Admin</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </div>
 
         <ion-button expand="block" type="submit" class="register-button">
           Registrati
-        </ion-button>
+        </ion-button> <!-- Pulsante per inviare il form -->
       </form>
 
-      <div class="login-link">
+      <div class="login-link"> <!-- Link per tornare alla login -->
         <span>Hai già un account?</span>
         <a routerLink="/login">Accedi</a>
       </div>

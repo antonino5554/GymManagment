@@ -1,87 +1,96 @@
-@import '../../theme/variables';
+@import '../../theme/variables'; /* Importa le variabili di tema, come colori e spacing */
 
+/* Applica lo stile generale della pagina tramite estensione */
 ion-content.valuta-content {
   @extend .page-container;
 }
 
+/* Sfondo animato "lava lamp" */
 .lava-lamp-bg {
-  @extend .lava-lamp-bg;
+  @extend .lava-lamp-bg; /* Usa lo stile di sfondo animato condiviso */
 
-  .blob { @extend .blob; }
-  .blob-1 { @extend .blob-1; }
-  .blob-2 { @extend .blob-2; }
-  .blob-3 { @extend .blob-3; }
+  .blob { @extend .blob; }       /* Stile base dei blob */
+  .blob-1 { @extend .blob-1; }   /* Blob 1 (posizione, colore) */
+  .blob-2 { @extend .blob-2; }   /* Blob 2 */
+  .blob-3 { @extend .blob-3; }   /* Blob 3 */
 }
 
+/* Wrapper che centra la card della valutazione e limita la larghezza */
 .valuta-wrapper {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 480px;
-  padding: 20px;
-  margin: 0 auto;
+  position: relative;   /* Per z-index e layering */
+  z-index: 1;           /* Sopra allo sfondo */
+  width: 100%;          /* Occupa tutta la larghezza */
+  max-width: 480px;     /* Ma non va oltre i 480px */
+  padding: 20px;        /* Spaziatura interna */
+  margin: 0 auto;       /* Centra il contenuto orizzontalmente */
 }
 
+/* Card centrale effetto "vetro" */
 .valuta-card {
-  @extend .card-glass;
-  padding: 2.5rem;
-  text-align: center;
+  @extend .card-glass;  /* Effetto glassmorphism */
+  padding: 2.5rem;      /* Spaziatura interna abbondante */
+  text-align: center;   /* Centra tutto il testo */
 }
 
+/* Titolo della card */
 .valuta-card h2 {
   font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--color-dark);
+  font-weight: 800;     /* Grassetto forte */
+  color: var(--color-dark); /* Colore testo scuro */
   margin-bottom: 0.3rem;
 }
 
+/* Sottotitolo della card */
 .valuta-card p {
   color: var(--color-gray);
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
 }
 
+/* Gruppo input per select/textarea */
 .input-group {
   @extend .input-group;
-  --background: var(--color-light);
+  --background: var(--color-light); /* Sfondo chiaro per il gruppo input */
 
   ion-icon {
-    color: var(--color-primary);
+    color: var(--color-primary);    /* Icona del colore principale */
   }
 
   ion-select,
   ion-textarea {
-    color: var(--color-dark);
+    color: var(--color-dark);       /* Testo scuro */
     font-weight: 500;
-    --placeholder-color: var(--color-muted);
+    --placeholder-color: var(--color-muted); /* Placeholder color più tenue */
   }
 
   ion-select::part(text),
   ion-textarea::part(native) {
-    color: var(--color-dark);
+    color: var(--color-dark);       /* Forza il colore testo nei browser moderni */
   }
 }
 
+/* Sezione stelle di valutazione */
 .rating-stars {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
+  display: flex;                 /* Disposizione orizzontale delle stelle */
+  justify-content: center;       /* Centra le stelle */
+  margin: 1rem 0;                /* Spaziatura sopra e sotto */
 
   ion-icon {
-    font-size: 2rem;
-    color: gold;
-    padding: 0 6px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
+    font-size: 2rem;             /* Stelle grandi */
+    color: gold;                 /* Colore oro per le stelle piene */
+    padding: 0 6px;              /* Spaziatura tra una stella e l'altra */
+    cursor: pointer;             /* Mostra il cursore cliccabile */
+    transition: transform 0.2s ease; /* Animazione ingrandimento su hover */
 
     &:hover {
-      transform: scale(1.15);
+      transform: scale(1.15);    /* Ingrandisce leggermente la stella su hover */
     }
   }
 }
 
+/* Pulsante invio valutazione, in stile primario ma con gradient personalizzato */
 .submit-button {
-  @extend .btn-primary;
-  background: linear-gradient(to right, #4c1d95, #7c3aed); // personalizzato
-  box-shadow: 0 6px 16px rgba(76, 29, 149, 0.3);
+  @extend .btn-primary;          /* Stile di base del pulsante principale */
+  background: linear-gradient(to right, #4c1d95, #7c3aed); /* Gradient viola */
+  box-shadow: 0 6px 16px rgba(76, 29, 149, 0.3);           /* Ombra soft viola */
 }

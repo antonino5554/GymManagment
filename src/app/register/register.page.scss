@@ -1,38 +1,44 @@
-@import '../../theme/variables';
+@import '../../theme/variables'; /* Importa le variabili di tema comuni (colori, font, ecc.) */
 
+/* Imposta l’altezza a 100% su html, body e ion-app per un layout a tutta pagina */
 html, body, ion-app {
   height: 100%;
 }
 
+/* Applica lo stile base della pagina tramite estensione */
 ion-content.register-content {
   @extend .page-container;
 }
 
+/* Sfondo animato effetto "lava lamp" */
 .lava-lamp-bg {
   @extend .lava-lamp-bg;
 
   .blob {
-    @extend .blob;
+    @extend .blob; /* Tutti i blob condividono lo stile base */
   }
 
-  .blob-1 { @extend .blob-1; }
+  .blob-1 { @extend .blob-1; } /* Blob personalizzati per posizione/colore */
   .blob-2 { @extend .blob-2; }
   .blob-3 { @extend .blob-3; }
 }
 
+/* Wrapper che centra la card e ne limita la larghezza */
 .register-wrapper {
-  position: relative;
-  z-index: 1;
+  position: relative;  /* Necessario per il layering con z-index */
+  z-index: 1;          /* Mantiene il wrapper sopra allo sfondo */
   width: 100%;
-  max-width: 480px;
-  padding: 20px;
-  margin: 0 auto;
+  max-width: 480px;    /* Massima larghezza per dispositivi grandi */
+  padding: 20px;       /* Spazio interno */
+  margin: 0 auto;      /* Centra il contenuto orizzontalmente */
 }
 
+/* Card principale effetto "vetro" */
 .register-card {
   @extend .card-glass;
 }
 
+/* Titolo della card */
 .register-header h2 {
   color: var(--color-dark);
   margin-bottom: 0.5rem;
@@ -40,48 +46,53 @@ ion-content.register-content {
   font-weight: 800;
 }
 
+/* Sottotitolo della card */
 .register-header p {
   color: var(--color-gray);
   margin-bottom: 2rem;
   font-size: 0.95rem;
 }
 
+/* Stile dei gruppi di input */
 .input-group {
   @extend .input-group;
 
   ion-icon {
-    font-size: 1.2rem;
-    color: var(--color-primary);
+    font-size: 1.2rem; /* Icone leggermente più grandi */
+    color: var(--color-primary); /* Colore principale del tema */
   }
 
   ion-input {
-    flex: 1;
-    --highlight-color-focused: var(--color-primary);
-    color: var(--color-dark);
+    flex: 1; /* L’input prende tutto lo spazio disponibile */
+    --highlight-color-focused: var(--color-primary); /* Colore della linea attiva */
+    color: var(--color-dark); /* Colore del testo */
   }
 }
 
+/* Pulsante di registrazione stile primario */
 .register-button {
   @extend .btn-primary;
 }
 
+/* Footer con link per chi ha già un account */
 .login-link {
   margin-top: 1.5rem;
   font-size: 0.9rem;
   color: var(--color-gray);
 
   a {
-    color: var(--color-primary);
+    color: var(--color-primary);   /* Colore principale per il link */
     font-weight: 600;
     margin-left: 6px;
-    transition: color 0.25s ease;
+    transition: color 0.25s ease; /* Animazione cambio colore */
 
     &:hover {
-      color: var(--color-secondary);
+      color: var(--color-secondary); /* Cambia colore su hover */
     }
   }
 }
 
+/* Sezione per la selezione del ruolo (cliente, trainer, admin) */
 .role-selection {
   margin-top: 1.5rem;
   text-align: center;
@@ -93,10 +104,11 @@ ion-content.register-content {
     font-weight: 600;
   }
 
+  /* Segment personalizzato per i bottoni ruolo */
   .custom-segment {
     --background: var(--color-light);
     --color: var(--color-primary);
-    --indicator-color: transparent;
+    --indicator-color: transparent; /* Nessun indicatore standard */
 
     border-radius: 16px;
     padding: 6px;
@@ -106,8 +118,8 @@ ion-content.register-content {
     ion-segment-button {
       --background: var(--color-light);
       --color: var(--color-primary);
-      --color-checked: #ffffff;
-      --background-checked: linear-gradient(to right, #7c3aed, #3b82f6);
+      --color-checked: #ffffff; /* Colore testo quando selezionato */
+      --background-checked: linear-gradient(to right, #7c3aed, #3b82f6); /* Gradient per selezione */
       --border-radius: 16px;
       --indicator-color: transparent;
 

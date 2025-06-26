@@ -1,42 +1,42 @@
 <ion-header>
-  <ion-toolbar color="light">
-    <ion-title>Benvenuto</ion-title>
+  <ion-toolbar color="light"> <!-- Toolbar chiara -->
+    <ion-title>Benvenuto</ion-title> <!-- Titolo della pagina -->
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="login-content" fullscreen="true">
-  <div class="lava-lamp-bg">
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
-  <div class="blob blob-3"></div>
+<ion-content class="login-content" fullscreen="true"> <!-- Contenuto principale, a schermo intero -->
+  <div class="lava-lamp-bg"> <!-- Sfondo animato "lava lamp" -->
+  <div class="blob blob-1"></div> <!-- Blob animato 1 -->
+  <div class="blob blob-2"></div> <!-- 2 -->
+  <div class="blob blob-3"></div> <!-- 3 -->
 </div>
 
 
-  <div class="login-wrapper">
-    <div class="login-bubble">
-      <h2>Accedi</h2>
-      <p>Accedi per continuare alla tua area personale</p>
+  <div class="login-wrapper"> <!-- Wrapper centrale per il box di login -->
+    <div class="login-bubble"> <!-- Box di login (stile "bubble") -->
+      <h2>Accedi</h2> <!-- Titolo della sezione di login -->
+      <p>Accedi per continuare alla tua area personale</p> <!-- Sottotitolo/istruzione -->
 
-      <form (ngSubmit)="login()" class="login-form">
+      <form (ngSubmit)="login()" class="login-form"> <!-- Form di login, chiama il metodo login() su submit -->
 
-        <div class="input-group">
-          <ion-icon name="person-outline" slot="start"></ion-icon>
-          <ion-input type="text" placeholder="Username" [(ngModel)]="username" name="username" required></ion-input>
+        <div class="input-group"> <!-- Gruppo input per username -->
+          <ion-icon name="person-outline" slot="start"></ion-icon> <!-- Icona utente -->
+          <ion-input type="text" placeholder="Username" [(ngModel)]="username" name="username" required></ion-input> <!-- Input per lo username, collegato tramite ngModel -->
         </div>
 
-        <div class="input-group">
-          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
-          <ion-input type="password" placeholder="Password" [(ngModel)]="password" name="password" required></ion-input>
+        <div class="input-group"> <!-- Gruppo input per password -->
+          <ion-icon name="lock-closed-outline" slot="start"></ion-icon> <!-- Icona password -->
+          <ion-input type="password" placeholder="Password" [(ngModel)]="password" name="password" required></ion-input> <!-- Input per la password, collegato tramite ngModel -->
         </div>
 
-        <ion-button expand="block" type="submit" class="login-button">
+        <ion-button expand="block" type="submit" class="login-button"> <!-- Pulsante di invio del form (login) -->
           Entra
         </ion-button>
       </form>
 
-      <div class="login-footer">
+      <div class="login-footer"> <!-- Footer sotto al form -->
         <span>Non hai un account?</span>
-        <a routerLink="/register">Registrati</a>
+        <a routerLink="/register">Registrati</a> <!-- Link alla pagina di registrazione -->
       </div>
     </div>
   </div>
