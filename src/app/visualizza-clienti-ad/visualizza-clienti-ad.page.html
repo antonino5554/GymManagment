@@ -23,9 +23,9 @@
         <ion-item *ngFor="let customer of customers" class="ad-item" lines="none">
           <ion-label> <!-- Informazioni del cliente -->
             <h3>{{ customer.full_name }}</h3>
-            <p>Email: {{ customer.email }}</p>
-            <p>Telefono: {{ customer.phone }}</p>
-            <p *ngIf="customer.join_date">Iscritto il: {{ customer.join_date | date:'dd/MM/yyyy' }}</p>
+            <p>📧Email: {{ customer.email }}</p>
+            <p>📱Telefono: {{ customer.phone }}</p>
+            <p *ngIf="customer.join_date">📆Iscritto il: {{ customer.join_date | date:'dd/MM/yyyy' }}</p>
           </ion-label>
         </ion-item>
       </ion-list>

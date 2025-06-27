@@ -1,8 +1,5 @@
-/* ===============================
-   VARIABILI GLOBALI - STILE APP
-================================= */
-
 :root {
+
   // Colori
   --color-primary: #7c3aed;
   --color-secondary: #3b82f6;
@@ -23,10 +20,8 @@
   --font-weight-normal: 500;
 }
 
-/* ===============================
-   COMPONENTI GLOBALI RIUTILIZZABILI
-================================= */
 
+/* Stile per i box di imput */
 .input-group {
   background: var(--color-light);
   border-radius: var(--radius);
@@ -56,7 +51,7 @@
     color: var(--color-dark);
   }
 }
-
+/* caratteristiche card centrale */
 .card-glass {
   background: #ffffffee;
   backdrop-filter: blur(10px);
@@ -65,44 +60,41 @@
   box-shadow: var(--box-shadow-lg);
   text-align: center;
 }
-
+/* Contenitore principale della pagina */
 .page-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100vh;  /* Occupa almeno tutta l'altezza della finestra */
   padding: 0;
   position: relative;
   overflow: hidden;
   --background: var(--color-background);
 }
-
+/* Bottone principale */
 .btn-primary {
   font-weight: var(--font-weight-bold);
-  border-radius: 999px;
+  border-radius: 999px; /* Completamente arrotondato (pill) */
   background: var(--color-gradient);
   color: white;
   box-shadow: 0 6px 16px rgba(124, 58, 237, 0.3);
   padding: 14px 0;
   width: 100%;
-  transition: transform 0.2s ease;
-
+  transition: transform 0.2s ease; /* Animazione al passaggio del mouse */
+/* Override di altre possibili variabili */
   --background: none;
   --box-shadow: none;
   --border-color: transparent;
   --border-width: 0;
   --border-style: none;
 }
-
+/* Effetto "zoom" al passaggio del mouse sul bottone */
 .btn-primary:hover {
   transform: scale(1.03);
 }
 
 
-/* ===============================
-   ANIMAZIONE BLOB (LAVA LAMP)
-================================= */
-
+/* Animazione di un blob che si muove */
 @keyframes blobMove {
   0%, 100% {
     transform: translate(0, 0) scale(1) rotate(0deg);
@@ -117,9 +109,9 @@
     border-radius: 50% 50% 60% 40% / 45% 55% 60% 40%;
   }
 }
-
+/* Sfondo tipo "lava lamp" con blob colorati animati */
 .lava-lamp-bg {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -134,9 +126,9 @@
     background: var(--color-gradient);
     opacity: 0.85;
     border-radius: 40% 60% 55% 45% / 60% 40% 60% 40%;
-    animation: blobMove 8s infinite ease-in-out;
-    filter: blur(30px);
-    mix-blend-mode: screen;
+    animation: blobMove 8s infinite ease-in-out;  /* Usa l'animazione sopra */
+    filter: blur(30px); /* Sfocatura */
+    mix-blend-mode: screen; /* Effetto fusione con lo sfondo */
   }
 
   .blob-1 { top: -50px; left: -80px; animation-delay: 0s; }
