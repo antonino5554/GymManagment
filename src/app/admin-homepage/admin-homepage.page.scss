@@ -55,6 +55,10 @@ ion-content.admin-home-content { //contenuto principale della home
 .home-button {
   @extend .btn-primary;   //applica tutti gli stili della classe btn-primary
   text-transform: none;
+
+    ion-icon {
+    margin-right: 8px; //spazio a destra dell'icona 
+  }
 }
 
 // Color variants override

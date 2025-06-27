@@ -57,6 +57,10 @@ ion-content.clienti-home-content { // contenuto principale della home
 .home-button {  // Pulsante principale della home
   @extend .btn-primary; // Estende gli stili del pulsante primario
   text-transform: none;
+
+    ion-icon {
+    margin-right: 8px; //spazio a destra dell'icona 
+  }
 }
 
 
